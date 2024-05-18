@@ -1,3 +1,145 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "eslint:recommended",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended",
+    "plugin:import/typescript",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:storybook/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "import",
+    "react",
+    "react-hooks",
+    "storybook"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "ignorePatterns": [
+    "node_modules/*",
+    ".next/*",
+    "next.config.mjs",
+    "postcss.config.mjs",
+    "tailwind.config.mjs"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx"]
+      },
+      "typescript": {}
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": false,
+        "printWidth": 80,
+        "endOfLine": "lf",
+        "tabWidth": 2,
+        "indentStyle": "space",
+        "useTabs": false,
+        "arrowParens": "avoid",
+        "bracketSameLine": false,
+        "singleQuote": true,
+        "jsxSingleQuote": true,
+        "trailingComma": "all"
+      }
+    ],
+    "sort-imports": [
+      "error",
+      {
+        "ignoreDeclarationSort": true,
+        "allowSeparatedGroups": true
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "{next,next/**}",
+            "group": "builtin",
+            "position": "before"
+          },
+          { "pattern": "react", "group": "builtin", "position": "before" },
+          {
+            "pattern": "{~/forms/**,~/forms}",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "{~/components/**,~/components}",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "{~/hooks/**,~/hooks}",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "{~/i18n,~/navigation}",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "{~/utils/**,~/utils}",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "{~/styles/**,~/styles}",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "{~/assets/**,~/assets}",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "warnOnUnassignedImports": false
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "react/require-default-props": "off",
+    "react/prop-types": "off",
+    "default-case": "off",
+    "no-void": "off"
+  }
 }
