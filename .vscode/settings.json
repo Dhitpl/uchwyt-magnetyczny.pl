@@ -1,5 +1,13 @@
 {
   "cSpell.words": [
-    "tailwindcss"
-  ]
+    "clsx",
+    "lucide",
+    "magnetyczny",
+    "Parens",
+    "tailwindcss",
+    "uchwyt"
+  ],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
 }
