@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "suffix": "| uchwyt magnetyczny"
+  },
+  "page": {
+    "app": {
+      "blog": {
+        "meta": {
+          "title": "posty"
+        }
+      },
+      "contact": {
+        "meta": {
+          "title": "kontakt"
+        }
+      },
+      "home": {
+        "meta": {
+          "title": "Strona główna"
+        }
+      }
+    },
+    "error": {
+      "not-found": {
+        "meta": {
+          "title": "Nie znaleziono strony"
+        }
+      }
+    }
+  }
+}

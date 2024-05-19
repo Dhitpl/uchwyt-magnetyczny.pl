@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "suffix": "| magnetic handler"
+  },
+  "page": {
+    "app": {
+      "blog": {
+        "meta": {
+          "title": "posts"
+        }
+      },
+      "contact": {
+        "meta": {
+          "title": "contact"
+        }
+      },
+      "home": {
+        "meta": {
+          "title": "Home"
+        }
+      }
+    },
+    "error": {
+      "not-found": {
+        "meta": {
+          "title": "Page not found"
+        }
+      }
+    }
+  }
+}
