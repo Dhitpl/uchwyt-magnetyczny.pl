@@ -1,9 +1,36 @@
+'use client'
+
 import type { ReactNode } from 'react'
+
+import { motion } from 'framer-motion'
 
 type AppLayoutProps = {
   children: ReactNode
 }
 
+const animation = {
+  variants: {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+    },
+  },
+  transition: {
+    duration: 1,
+  },
+}
+
 export default function AppLayout({ children }: AppLayoutProps) {
-  return <div>{children}</div>
+  return (
+    <motion.div
+      initial='hidden'
+      animate='visible'
+      variants={animation.variants}
+      transition={animation.transition}
+    >
+      {children}
+    </motion.div>
+  )
 }
