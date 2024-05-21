@@ -112,7 +112,7 @@
             "position": "after"
           },
           {
-            "pattern": "{~/i18n,~/navigation}",
+            "pattern": "{~/i18n,~/middleware,~/navigation,~/prisma}",
             "group": "internal",
             "position": "before"
           },

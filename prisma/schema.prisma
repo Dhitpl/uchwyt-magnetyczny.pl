@@ -1,0 +1,495 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model logi {
+  id_logi   Int       @id @default(autoincrement())
+  login     String?   @db.VarChar(50)
+  pass      String?   @db.VarChar(50)
+  ip        String?   @db.VarChar(50)
+  date_time DateTime? @db.DateTime(0)
+  access    Int?      @db.TinyInt
+  browser   String    @db.VarChar(255)
+
+  @@index([date_time], map: "date_time")
+  @@index([id_logi], map: "id_logi")
+  @@map("_logi")
+}
+
+model login_admin {
+  id_login_admin Int       @id @default(autoincrement())
+  login          String?   @db.VarChar(50)
+  pass           String?   @db.VarChar(50)
+  ip             String?   @db.VarChar(50)
+  date_login     DateTime? @db.DateTime(0)
+
+  @@map("_login_admin")
+}
+
+model backlinks {
+  id_backlinks         Int    @id @default(autoincrement())
+  backlink             String @db.VarChar(255)
+  backlink_description String @db.VarChar(255)
+  active               Int    @default(0) @db.TinyInt
+}
+
+model basket {
+  id_basket    Int      @id @unique(map: "id_basket") @default(autoincrement())
+  id_werehouse Int
+  id_session   String   @db.VarChar(25)
+  pcs_basket   Int
+  date_basket  DateTime @db.DateTime(0)
+
+  @@index([date_basket], map: "date_basket")
+  @@index([id_session], map: "id_session")
+  @@index([id_werehouse], map: "id_werehouse")
+}
+
+model basket_buyer {
+  id_basket_buyer   Int      @id @unique(map: "id_basket_buyer") @default(autoincrement())
+  id_session        String   @db.VarChar(23)
+  email             String?  @db.VarChar(100)
+  name_order        String?  @db.VarChar(100)
+  street            String?  @db.VarChar(100)
+  street_no         String?  @db.VarChar(50)
+  zip               String?  @db.VarChar(10)
+  city              String?  @db.VarChar(100)
+  tel               String?  @db.VarChar(50)
+  country           Int      @default(1) @db.TinyInt
+  date_basket_buyer DateTime @db.DateTime(0)
+  parcel            String?  @db.LongText
+
+  @@index([date_basket_buyer], map: "date_basket_buyer")
+  @@index([id_session], map: "id_session")
+}
+
+model basket_buyer_invoice {
+  id_basket_buyer_invoice   Int      @id @unique(map: "id_basket_buyer_invoice") @default(autoincrement())
+  id_session                String   @db.VarChar(23)
+  id_basket_buyer           Int?
+  name_invoice              String?  @db.VarChar(255)
+  street_invoice            String?  @db.VarChar(50)
+  street_no_invoice         String?  @db.VarChar(10)
+  city_invoice              String?  @db.VarChar(50)
+  zip_invoice               String?  @db.VarChar(10)
+  nip                       String?  @db.VarChar(20)
+  country_invoice           Int?     @db.TinyInt
+  date_basket_buyer_invoice DateTime @db.DateTime(0)
+
+  @@index([date_basket_buyer_invoice], map: "date_basket_buyer_invoice")
+  @@index([id_basket_buyer], map: "id_basket_buyer")
+}
+
+model basket_info {
+  id_basket_info  BigInt                  @id @unique(map: "id_basket_info") @default(autoincrement()) @db.UnsignedBigInt
+  id_shop         basket_info_id_shop
+  id_shipment     Int                     @db.TinyInt
+  qty_parcel      Int                     @default(0)
+  price_parcel    Float                   @default(0)
+  widok           Int                     @default(0) @db.TinyInt
+  id_session      String                  @db.VarChar(23)
+  id_language     basket_info_id_language
+  id_currency     Int                     @db.TinyInt
+  id_currency_buy Int
+  data_time       DateTime                @db.DateTime(0)
+  ip              String?                 @db.VarChar(15)
+  browser         String?                 @db.VarChar(255)
+  is_invoice      Int                     @default(0) @db.TinyInt
+  order_suma      Float                   @default(0)
+  comments        String?                 @db.VarChar(2000)
+  rabat           String?                 @db.VarChar(255)
+
+  @@index([data_time], map: "data_time")
+  @@index([id_basket_info], map: "id_basket_info_2")
+  @@index([id_currency], map: "id_currency")
+  @@index([id_currency_buy], map: "id_currency_buy")
+  @@index([id_language], map: "id_language")
+  @@index([id_session], map: "id_session")
+  @@index([id_shipment], map: "id_shipment")
+  @@index([id_shop], map: "id_shop")
+  @@index([widok], map: "widok")
+}
+
+model category_discount {
+  id_category_discount Int @id @unique(map: "id_category_discount") @default(autoincrement())
+  id_category_type     Int
+  discount             Int
+  value_discount       Int
+
+  @@index([discount], map: "discount")
+  @@index([id_category_type], map: "id_category_type")
+}
+
+model category_type {
+  id_category_type Int     @id @default(autoincrement())
+  short_name_pl    String? @db.VarChar(255)
+  long_name_pl     String? @db.VarChar(255)
+  long_name_en     String? @db.VarChar(255)
+
+  @@index([id_category_type], map: "id_category_type")
+}
+
+model country {
+  id_country           Int    @id @unique(map: "id_currency") @default(autoincrement())
+  id_euro              Int    @db.TinyInt
+  country_name         String @db.VarChar(20)
+  country_full_name    String @db.VarChar(50)
+  country_full_name_en String @db.VarChar(50)
+
+  @@index([id_country], map: "id_country")
+  @@index([id_euro], map: "id_euro")
+}
+
+model country_shipment {
+  id_shipment                   Int    @id @unique(map: "id_shipment") @default(autoincrement())
+  id_euro                       Int    @db.TinyInt
+  weight_to                     Int    @db.TinyInt
+  country_shipment_full_name    String @db.VarChar(50)
+  country_shipment_full_name_en String @db.VarChar(50)
+  cod                           Int    @db.TinyInt
+  netto_shipment                Float? @db.Float
+  vat                           Int    @db.TinyInt
+  link_check                    String @db.VarChar(55)
+
+  @@index([id_euro], map: "id_euro")
+  @@index([id_shipment], map: "id_shipment_2")
+}
+
+model currency {
+  id_currency   Int     @id @unique(map: "id_currency") @default(autoincrement())
+  name_currency String? @db.VarChar(45)
+
+  @@index([id_currency], map: "id_currency_2")
+}
+
+model currency_buy {
+  id_currency_buy Int       @id @default(autoincrement())
+  id_currency     Int?
+  data_buy        DateTime? @db.Date
+  price_nbp       Decimal?  @db.Decimal(10, 4)
+}
+
+model errorlog {
+  id_error_log    Int       @id @unique(map: "id_error_log") @default(autoincrement())
+  id_login_admin  Int?      @db.TinyInt
+  date_time_error DateTime? @db.DateTime(0)
+  query           String?   @db.Text
+  error           String?   @db.Text
+  type            String?   @db.VarChar(10)
+  page            String?   @db.VarChar(50)
+  domain          String?   @db.VarChar(50)
+  url             String?   @db.VarChar(255)
+  error_ip        String?   @db.VarChar(25)
+
+  @@index([id_error_log], map: "id_error_log_2")
+  @@index([id_login_admin], map: "id_login_admin")
+}
+
+model ip_404_log {
+  id_ip_404_log Int      @id @unique(map: "id_ip_404_log") @default(autoincrement())
+  ip_404_log    String   @db.VarChar(30)
+  browser       String   @db.VarChar(255)
+  data_log      DateTime @db.DateTime(0)
+  ref           String   @db.VarChar(100)
+  page          String   @db.VarChar(100)
+  search        String?  @db.VarChar(255)
+
+  @@index([data_log], map: "data_log")
+  @@index([id_ip_404_log], map: "id_ip_404_log_2")
+  @@index([ip_404_log], map: "ip_404_log")
+}
+
+model ip_fake {
+  id_ip_fake Int    @id @default(autoincrement())
+  ip         String @db.VarChar(20)
+  opis_ip    String @db.VarChar(255)
+  active_ip  Int    @db.TinyInt
+}
+
+model ip_fake_log {
+  id_ip_fake_log Int      @id @default(autoincrement())
+  ip_log         String   @db.VarChar(30)
+  browser        String   @db.VarChar(255)
+  data_log       DateTime @db.DateTime(0)
+  ref            String   @db.VarChar(100)
+  page           String   @db.VarChar(100)
+
+  @@index([data_log], map: "data_log")
+  @@index([id_ip_fake_log], map: "id_ip_fake_log")
+  @@index([id_ip_fake_log], map: "id_ip_fake_log_2")
+  @@index([ip_log], map: "ip_log")
+}
+
+model ip_fake_log_count {
+  id_ip_fake_log_count Int      @id @default(autoincrement())
+  ip_count             String   @db.VarChar(30)
+  browser              String   @db.VarChar(255)
+  data_log             DateTime @db.DateTime(0)
+  ref                  String   @db.VarChar(100)
+  page                 String   @db.VarChar(100)
+  count                Int
+  coto                 String   @db.VarChar(30)
+
+  @@index([ip_count], map: "id_count")
+  @@index([id_ip_fake_log_count], map: "id_ip_fake_log_count")
+}
+
+model language {
+  id_language       Int    @id @unique(map: "id_currency") @default(autoincrement())
+  lang_name         String @db.VarChar(20)
+  lang_full_name    String @db.VarChar(50)
+  lang_full_name_en String @db.VarChar(50)
+}
+
+model news {
+  id_news     Int     @id @default(autoincrement())
+  id_language Int     @db.TinyInt
+  title       String? @db.VarChar(2500)
+  news_desc   String? @db.VarChar(2000)
+  news_keys   String? @db.VarChar(2000)
+  content     String  @db.Text
+  active_news Int     @default(0) @db.TinyInt
+}
+
+model orders_buyer {
+  id_orders_buyer Int     @id @unique(map: "id_orders_buyer") @default(autoincrement())
+  id_session      String  @db.VarChar(50)
+  email           String? @db.VarChar(50)
+  name            String? @db.VarChar(100)
+  street          String? @db.VarChar(100)
+  street_no       String? @db.VarChar(50)
+  zip             String? @db.VarChar(10)
+  city            String? @db.VarChar(100)
+  tel             String? @db.VarChar(50)
+  country         Int     @db.TinyInt
+  parcel          String? @db.LongText
+
+  @@index([id_orders_buyer], map: "id_orders_buyer_2")
+  @@index([id_session], map: "id_session")
+}
+
+model orders_buyer_invoice {
+  id_orders_buyer_invoice Int     @id @unique(map: "id_orders_buyer_invoice") @default(autoincrement())
+  id_orders_buyer         Int?
+  id_orders_shop          Int?
+  id_session              String  @db.VarChar(50)
+  name_invoice            String? @db.VarChar(255)
+  street_invoice          String? @db.VarChar(50)
+  street_no_invoice       String? @db.VarChar(10)
+  city_invoice            String? @db.VarChar(50)
+  zip_invoice             String? @db.VarChar(10)
+  nip                     String? @db.VarChar(50)
+  country_invoice         Int     @db.TinyInt
+
+  @@index([id_orders_buyer], map: "id_orders_buyer")
+  @@index([id_orders_buyer_invoice], map: "id_orders_buyer_invoice_2")
+  @@index([id_orders_shop], map: "id_orders_shop")
+  @@index([id_session], map: "id_session")
+}
+
+model orders_shop {
+  id_orders_shop  Int       @id @unique(map: "id_orders_shop") @default(autoincrement())
+  id_orders_buyer Int?
+  id_shop         Int?      @db.TinyInt
+  id_shipment     Int?
+  qty_parcel      Int
+  id_session      String    @db.VarChar(50)
+  id_language     Int       @db.TinyInt
+  id_currency     Int       @db.TinyInt
+  id_currency_buy Int
+  date_buy        DateTime? @db.DateTime(0)
+  date_send       DateTime? @db.DateTime(0)
+  status_order    Int?      @default(0) @db.TinyInt
+  ip_order        String    @db.VarChar(20)
+  browser_order   String    @db.VarChar(255)
+  is_invoice      Int?      @db.TinyInt
+  parcel_no       String?   @default("0") @db.VarChar(30)
+  order_sum       Float?
+  bank            String?   @db.Text
+  comments_order  String?   @db.VarChar(2000)
+  rabat           String?   @db.VarChar(255)
+
+  @@index([date_buy], map: "date_buy")
+  @@index([date_send], map: "date_send")
+  @@index([id_currency], map: "id_currency")
+  @@index([id_currency_buy], map: "id_currency_buy")
+  @@index([id_language], map: "id_language")
+  @@index([id_orders_buyer], map: "id_orders_buyer")
+  @@index([id_orders_shop], map: "id_orders_shop_2")
+  @@index([id_session], map: "id_session")
+  @@index([id_shipment], map: "id_shipment")
+  @@index([id_shop], map: "id_shop")
+}
+
+model orders_shop_value {
+  id_orders_shop_value Int      @id @unique(map: "id_orders_shop_value") @default(autoincrement())
+  id_orders_shop       Int?
+  id_werehouse         Int?
+  id_session           String   @db.VarChar(50)
+  netto_orders         Decimal? @db.Decimal(10, 2)
+  pcs_orders           Int?
+
+  @@index([id_orders_shop], map: "id_orders_shop")
+  @@index([id_orders_shop_value], map: "id_orders_shop_value_2")
+  @@index([id_session], map: "id_session")
+  @@index([id_werehouse], map: "id_werehouse")
+}
+
+model popup {
+  id_popup  Int      @id @default(autoincrement())
+  unique_id String   @db.TinyText
+  date_from DateTime @db.DateTime(0)
+  date_to   DateTime @db.DateTime(0)
+  content   String   @db.MediumText
+}
+
+model properties {
+  id_properties Int    @id @default(autoincrement())
+  typ           String @db.VarChar(10)
+  brkGs         String @db.VarChar(10)
+  brt           String @db.VarChar(10)
+  bhckoe        String @db.VarChar(10)
+  bhckam        String @db.VarChar(10)
+  ihckoe        String @db.VarChar(10)
+  ihckam        String @db.VarChar(10)
+  bhmaxmgoe     String @db.VarChar(10)
+  bhmaxkjm      String @db.VarChar(10)
+  temperatura   String @db.VarChar(10)
+}
+
+model rating {
+  id_rating    Int      @id @unique(map: "id_rating") @default(autoincrement())
+  id_werehouse Int
+  rating       Int      @db.TinyInt
+  ip           String   @db.VarChar(50)
+  browser      String?  @db.VarChar(255)
+  date_rating  DateTime @db.DateTime(0)
+  id_session   String   @db.VarChar(50)
+
+  @@index([date_rating], map: "date_rating")
+  @@index([id_rating], map: "id_rating_2")
+  @@index([id_werehouse], map: "id_werehouse")
+}
+
+model salesman {
+  id_salesman Int      @id @default(autoincrement())
+  name        String   @db.VarChar(255)
+  pass        String   @db.VarChar(255)
+  date_time   DateTime @db.Date
+  ip          String   @db.VarChar(255)
+}
+
+model satel {
+  id_satel      Int @id @default(autoincrement())
+  id_language   Int @db.TinyInt
+  id_coating    Int @db.TinyInt
+  id_shape      Int @db.TinyInt
+  id_properties Int @db.TinyInt
+  id_kierunek   Int @db.TinyInt
+
+  @@index([id_satel], map: "id_satel")
+}
+
+model share {
+  id_share Int      @id @default(autoincrement())
+  hash     String   @db.Text
+  date     DateTime @db.DateTime(0)
+  ip       String   @db.Text
+  browser  String   @db.VarChar(255)
+}
+
+model share_pcs {
+  id_share_pcs Int @id @default(autoincrement())
+  id_share     Int
+  id_werehouse Int
+  pcs          Int
+}
+
+model shop {
+  id_shop     Int     @id @default(autoincrement())
+  shop_name   String? @db.VarChar(255)
+  shop_domain String? @db.VarChar(255)
+  default     Boolean @default(false)
+
+  @@index([id_shop], map: "id_shop")
+  @@index([id_shop], map: "id_shop_2")
+}
+
+model werehouse {
+  id_werehouse     Int      @id @unique(map: "id_werehouse") @default(autoincrement())
+  id_category_type Int?     @db.TinyInt
+  id_properties    Int      @db.TinyInt
+  name             String?  @db.VarChar(255)
+  coating          Int?     @db.TinyInt
+  direction        Int?     @db.TinyInt
+  capacity         Decimal  @default(0.00) @db.Decimal(10, 2)
+  capacity_n       Decimal  @default(0.00) @db.Decimal(10, 2)
+  descript         String?  @db.VarChar(1024)
+  netto            Decimal? @default(0.00) @db.Decimal(10, 2)
+  weight           Decimal? @default(0.00) @db.Decimal(10, 2)
+  vat              Int?     @db.TinyInt
+  status_product   Int?     @db.TinyInt
+  pcs              Int?
+  name_short       String?  @db.VarChar(50)
+
+  @@index([id_category_type], map: "id_category_type")
+  @@index([id_properties], map: "id_properties")
+  @@index([id_werehouse], map: "id_werehouse_2")
+}
+
+model werehouse_history {
+  id_werehouse_history Int       @id @default(autoincrement())
+  id_orders_shop       Int?
+  id_werehouse         Int?      @default(0)
+  id_login_admin       Int?
+  date_history         DateTime? @db.DateTime(0)
+  operation            String?   @db.Text
+  operation_b          String?   @db.Text
+  descript_history     String?   @db.Text
+  active               Int?      @db.TinyInt
+
+  @@index([date_history], map: "date_history")
+  @@index([id_orders_shop], map: "id_orders_shop")
+  @@index([id_werehouse], map: "id_werehouse")
+  @@index([id_werehouse_history], map: "id_werehouse_history")
+}
+
+model werehouse_photo {
+  id_werehouse_photo Int     @id @default(autoincrement())
+  id_werehouse       Int?
+  default_photo      Int?    @db.TinyInt
+  link               String? @db.VarChar(255)
+
+  @@index([id_werehouse], map: "id_werehouse")
+  @@index([id_werehouse_photo], map: "id_werehouse_photo")
+}
+
+enum basket_info_id_shop {
+  ID_1  @map("1")
+  ID_2  @map("2")
+  ID_3  @map("3")
+  ID_4  @map("4")
+  ID_5  @map("5")
+  ID_6  @map("6")
+  ID_7  @map("7")
+  ID_8  @map("8")
+  ID_9  @map("9")
+  ID_10 @map("10")
+  ID_11 @map("11")
+  ID_12 @map("12")
+  ID_13 @map("13")
+  ID_14 @map("14")
+  ID_15 @map("15")
+  ID_16 @map("16")
+  ID_17 @map("17")
+}
+
+enum basket_info_id_language {
+  ID_1 @map("1")
+  ID_2 @map("2")
+}
