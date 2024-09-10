@@ -129,6 +129,9 @@
     }
   },
   "sections": {
+    "navbar": {
+      "title": "Title"
+    },
     "breadcrumb": {
       "/": "Home",
       "/blog": "Blog",
