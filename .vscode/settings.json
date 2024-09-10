@@ -14,5 +14,6 @@
     "*.css": "tailwindcss"
   },
   "i18n-ally.localesPaths": ["src/locales"],
-  "i18n-ally.keystyle": "nested"
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sourceLanguage": "pl"
 }

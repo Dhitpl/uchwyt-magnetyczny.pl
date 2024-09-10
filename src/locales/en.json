@@ -27,5 +27,10 @@
         }
       }
     }
+  },
+  "sections": {
+    "navbar": {
+      "title": "Title"
+    }
   }
 }

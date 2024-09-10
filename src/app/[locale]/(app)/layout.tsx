@@ -4,7 +4,7 @@ import type { ReactNode } from 'react'
 
 import { motion } from 'framer-motion'
 
-import { Breadcrumb } from '~/sections'
+import { Breadcrumb, Navbar } from '~/sections'
 
 type AppLayoutProps = {
   children: ReactNode
@@ -32,6 +32,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
       variants={animation.variants}
       transition={animation.transition}
     >
+      <Navbar />
       <Breadcrumb />
       {children}
     </motion.div>
