@@ -1,4 +1,4 @@
-import { Inter as FontSans } from 'next/font/google'
+import { Quicksand as FontQuicksand } from 'next/font/google'
 import { notFound } from 'next/navigation'
 
 import type { ReactNode } from 'react'
@@ -18,9 +18,9 @@ type RootLayoutProps = {
   children: ReactNode
 } & PageProps
 
-const fontSans = FontSans({
-  subsets: ['latin'],
-  variable: '--font-sans',
+const fontQuicksand = FontQuicksand({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-quicksand',
 })
 
 export default function RootLayout({
@@ -45,8 +45,8 @@ export default function RootLayout({
 
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased',
-          fontSans.variable,
+          'min-h-screen bg-background antialiased',
+          fontQuicksand.variable,
         )}
       >
         <NextIntlClientProvider locale={locale}>
