@@ -24,6 +24,7 @@ export type DefaultVariant = {
   size?: undefined
 }
 
+// TODO: consider different name for this type, it's confusing because variant is 'headline' or 'display' or 'label'
 export type TypographyVariants = VariantProps<
   typeof typographyVariants
 >['variant']
