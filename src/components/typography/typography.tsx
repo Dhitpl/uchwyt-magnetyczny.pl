@@ -36,6 +36,7 @@ export type TypographyProps = {
  * @param {string} [props.variant] - The variant of the typography. Can be 'headline', 'display', 'label', or undefined.
  * @param {number} [props.level] - The level of the headline variant (e.g., 1 for h1, 2 for h2, etc.).
  * @param {string} [props.size] - The size of the display or label variant. Defaults to 'md'.
+ * @param {string} [props.className] - Additional class names to apply to the component.
  * @returns {JSX.Element} The rendered typography component.
  *
  * @example
@@ -53,6 +54,10 @@ export type TypographyProps = {
  * @example
  * // Render a paragraph with default variant
  * <Typography tag="p">This is a paragraph</Typography>
+ *
+ * @example
+ * // Render a paragraph with additional class names
+ * <Typography tag="p" className="text-red-500">This is a paragraph with red text</Typography>
  */
 export function Typography({ children, className, ...props }: TypographyProps) {
   const Tag = props.tag || getDefaultTag(props)
