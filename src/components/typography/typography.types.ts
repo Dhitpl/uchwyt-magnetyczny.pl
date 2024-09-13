@@ -1,3 +1,7 @@
+import { VariantProps } from 'class-variance-authority'
+
+import type { typographyVariants } from './typography.const'
+
 export type Size = 'sm' | 'md' | 'lg'
 
 export type Display = {
@@ -19,3 +23,7 @@ export type DefaultVariant = {
   variant?: undefined
   size?: undefined
 }
+
+export type TypographyVariants = VariantProps<
+  typeof typographyVariants
+>['variant']

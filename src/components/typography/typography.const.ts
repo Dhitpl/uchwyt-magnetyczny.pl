@@ -1,22 +1,27 @@
-import { cn } from '~/utils'
+import { cva } from 'class-variance-authority'
 
-export const config = {
-  display: {
-    sm: cn('font-quicksand', 'text-display-sm'),
-    md: cn('font-quicksand', 'text-display-md'),
-    lg: cn('font-quicksand', 'text-display-lg'),
+import { TypographyVariants } from './typography.types'
+
+export const typographyVariants = cva(
+  'font-quicksand md:leading-[120%] md:font-normal',
+  {
+    variants: {
+      variant: {
+        'display-lg': 'md:text-[48px]',
+        'display-md': 'md:text-[40px]',
+        'display-sm': 'md:text-[32px]',
+        'headline-1': 'md:text-[28px]',
+        'headline-2': 'md:text-[26px]',
+        'headline-3': 'md:text-[24px]',
+        'headline-4': 'md:text-[22px]',
+        'headline-5': 'md:text-[20px]',
+        'headline-6': 'md:text-[18px]',
+        'label-lg': 'md:text-[16px]',
+        'label-md': 'md:text-[14px]',
+        'label-sm': 'md:text-[12px]',
+      },
+    },
   },
-  headline: {
-    '1': cn('font-quicksand', 'text-headline-1'),
-    '2': cn('font-quicksand', 'text-headline-2'),
-    '3': cn('font-quicksand', 'text-headline-3'),
-    '4': cn('font-quicksand', 'text-headline-4'),
-    '5': cn('font-quicksand', 'text-headline-5'),
-    '6': cn('font-quicksand', 'text-headline-6'),
-  },
-  label: {
-    sm: cn('font-quicksand', 'text-label-sm'),
-    md: cn('font-quicksand', 'text-label-md'),
-    lg: cn('font-quicksand', 'text-label-lg'),
-  },
-} as const
+)
+
+export const defaultTypographyVariant: TypographyVariants = 'label-md'

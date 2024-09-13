@@ -1,15 +1,17 @@
 import type { ReactNode } from 'react'
 
-import { config } from './typography.const'
+import { typographyVariants } from './typography.const'
 import type {
   DefaultVariant,
   Display,
   Headline,
   Label,
 } from './typography.types'
+import { getDefaultTag, getTypographyVariant } from './typography.utils'
 
 export type TypographyProps = {
   children?: ReactNode
+  className?: HTMLElement['className']
   tag?:
     | 'p'
     | 'span'
@@ -52,38 +54,19 @@ export type TypographyProps = {
  * // Render a paragraph with default variant
  * <Typography tag="p">This is a paragraph</Typography>
  */
-export function Typography({ children, ...props }: TypographyProps) {
-  if (props.variant === 'headline') {
-    const { level } = props
+export function Typography({ children, className, ...props }: TypographyProps) {
+  const Tag = props.tag || getDefaultTag(props)
 
-    const Heading = props.tag || `h${level}`
+  const variant = getTypographyVariant(props)
 
-    return <Heading className={config.headline[level]}>{children}</Heading>
-  }
-
-  if (props.variant === 'display') {
-    const defaultSize = 'md'
-    const { size } = props
-
-    const Display = props.tag || 'p'
-
-    return (
-      <Display className={config.display[size || defaultSize]}>
-        {children}
-      </Display>
-    )
-  }
-
-  if (props.variant === 'label' || props.variant === undefined) {
-    const { size } = props
-    const defaultSize = 'md'
-
-    const Label = props.tag || 'span'
-
-    return (
-      <Label className={config.label[size || defaultSize]}>{children}</Label>
-    )
-  }
-
-  return null
+  return (
+    <Tag
+      className={typographyVariants({
+        variant,
+        className,
+      })}
+    >
+      {children}
+    </Tag>
+  )
 }
