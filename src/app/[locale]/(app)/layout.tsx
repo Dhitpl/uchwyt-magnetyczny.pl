@@ -2,6 +2,8 @@
 
 import type { ReactNode } from 'react'
 
+import { Footer } from '~/sections'
+
 import { motion } from 'framer-motion'
 
 import { Breadcrumb } from '~/sections'
@@ -34,6 +36,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
     >
       <Breadcrumb />
       {children}
+    <Footer/>
     </motion.div>
   )
 }
