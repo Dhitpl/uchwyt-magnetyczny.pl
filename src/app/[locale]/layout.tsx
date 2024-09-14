@@ -1,13 +1,10 @@
 import { Quicksand as FontQuicksand } from 'next/font/google'
-import { notFound } from 'next/navigation'
 
 import type { ReactNode } from 'react'
 
-import { unstable_setRequestLocale } from 'next-intl/server'
+import { NextIntlClientProvider } from 'next-intl'
+import { getMessages } from 'next-intl/server'
 
-import { locales } from '~/i18n'
-
-import { NextIntlClientProvider } from '~/providers'
 import type { PageProps } from '~/types'
 
 import { cn } from '~/utils'
@@ -23,16 +20,11 @@ const fontQuicksand = FontQuicksand({
   variable: '--font-quicksand',
 })
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: { locale },
 }: RootLayoutProps) {
-  const isValidLocale = locales.some(cur => cur === locale)
-
-  if (!isValidLocale) notFound()
-
-  // enable static rendering
-  unstable_setRequestLocale(locale)
+  const messages = await getMessages()
 
   return (
     <html lang={locale}>
@@ -49,7 +41,7 @@ export default function RootLayout({
           fontQuicksand.variable,
         )}
       >
-        <NextIntlClientProvider locale={locale}>
+        <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
       </body>
