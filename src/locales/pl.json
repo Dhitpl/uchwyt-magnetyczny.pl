@@ -150,5 +150,23 @@
       "/terms-and-policies/statute": "Regulamin",
       "/tutorial": "Poradnik"
     }
+  },
+  "footer": {
+    "first-col": {
+      "heading": "informacje",
+      "links": {
+        "first": "faq",
+        "second": "kontakt",
+        "third": "blog"
+      }
+    },
+    "second-col": {
+      "heading": "dokumenty",
+      "links": {
+        "first": "regulamin",
+        "second": "polityka prywatności",
+        "third": "polityka cookies"
+      }
+    }
   }
 }
