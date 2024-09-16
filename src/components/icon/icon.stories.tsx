@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading, react/function-component-definition  */
 import type { Meta, StoryFn } from '@storybook/react'
-import dynamicLuicideIcons from 'lucide-react/dynamicIconImports'
+import dynamicLucideIcons from 'lucide-react/dynamicIconImports'
 
 import type { Color } from '~/types'
 
@@ -15,13 +15,13 @@ export default {
     variant: {
       control: {
         type: 'select',
-        options: ['luicide', 'custom'],
+        options: ['lucide', 'custom'],
       },
     },
     name: {
       control: {
         type: 'select',
-        options: Object.keys({ ...dynamicLuicideIcons, ...dynamicCustomIcons }),
+        options: Object.keys({ ...dynamicLucideIcons, ...dynamicCustomIcons }),
       },
     },
     size: {
@@ -38,9 +38,9 @@ export default {
 
 const Template: StoryFn<IconProps> = args => <Icon {...args} />
 
-export const LuicideIcon = Template.bind({})
-LuicideIcon.args = {
-  variant: 'luicide',
+export const LucideIcon = Template.bind({})
+LucideIcon.args = {
+  variant: 'lucide',
   name: 'home',
   size: 24,
   color: 'slate-600',
@@ -56,7 +56,7 @@ CustomIcon.args = {
 
 export const CustomSizeAndColor = Template.bind({})
 CustomSizeAndColor.args = {
-  variant: 'luicide',
+  variant: 'lucide',
   name: 'home',
   size: 32,
   color: 'purple-600',
