@@ -5,13 +5,13 @@ import type { Color } from '~/types'
 import { getColor } from '~/utils'
 
 import { defaultColor } from './icon.const'
-import { Custom, Luicide } from './icon.types'
+import { Custom, Lucide } from './icon.types'
 import { getIconComponent } from './icon.utils'
 
 export type IconProps<T extends string = string> = {
   size?: number
   color?: Color<T>
-} & (Luicide | Custom)
+} & (Lucide | Custom)
 
 /**
  * Icon component that renders an icon from the icons set.
@@ -25,24 +25,24 @@ export type IconProps<T extends string = string> = {
  * @returns The rendered icon component.
  *
  * @example
- * // Render a Luicide icon with default size and color
- * <Icon variant="luicide" name="home" />
+ * // Render a Lucide icon with default size and color
+ * <Icon variant="lucide" name="home" />
  *
  * @example
  * // Render a custom icon with default size and color
  * <Icon variant="custom" name="apple" />
  *
  * @example
- * // Render a Luicide icon with custom token color
- * <Icon variant="luicide" name="home" color="slate-600" />
+ * // Render a Lucide icon with custom token color
+ * <Icon variant="lucide" name="home" color="slate-600" />
  *
  * @example
  * // Render a custom icon with custom hex color
  * <Icon variant="custom" name="apple" color="#ff00ff" />
  *
  * @example
- * // Render a Luicide icon with custom size and token color
- * <Icon variant="luicide" name="home" size={32} color="slate-600" />
+ * // Render a Lucide icon with custom size and token color
+ * <Icon variant="lucide" name="home" size={32} color="slate-600" />
  */
 export function Icon<T extends string = string>({
   size = 24,
