@@ -49,6 +49,7 @@
     "postcss": "^8",
     "prisma": "5.19.1",
     "storybook": "^8.1.1",
+    "storybook-next-intl": "^1.1.4",
     "typescript": "^5.6.2"
   }
 }

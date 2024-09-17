@@ -115,6 +115,9 @@ devDependencies:
   storybook:
     specifier: ^8.1.1
     version: 8.2.9
+  storybook-next-intl:
+    specifier: ^1.1.4
+    version: 1.1.4(next-intl@3.19.1)
   typescript:
     specifier: ^5.6.2
     version: 5.6.2
@@ -1814,13 +1817,11 @@ packages:
     dependencies:
       '@formatjs/intl-localematcher': 0.5.4
       tslib: 2.7.0
-    dev: false
 
   /@formatjs/fast-memoize@2.2.0:
     resolution: {integrity: sha512-hnk/nY8FyrL5YxwP9e4r9dqeM6cAbo8PeU9UjyXojZMNvVad2Z06FAVHyR3Ecw6fza+0GH7vdJgiKIVXTMbSBA==}
     dependencies:
       tslib: 2.7.0
-    dev: false
 
   /@formatjs/icu-messageformat-parser@2.7.8:
     resolution: {integrity: sha512-nBZJYmhpcSX0WeJ5SDYUkZ42AgR3xiyhNCsQweFx3cz/ULJjym8bHAzWKvG5e2+1XO98dBYC0fWeeAECAVSwLA==}
@@ -1828,20 +1829,17 @@ packages:
       '@formatjs/ecma402-abstract': 2.0.0
       '@formatjs/icu-skeleton-parser': 1.8.2
       tslib: 2.7.0
-    dev: false
 
   /@formatjs/icu-skeleton-parser@1.8.2:
     resolution: {integrity: sha512-k4ERKgw7aKGWJZgTarIcNEmvyTVD9FYh0mTrrBMHZ1b8hUu6iOJ4SzsZlo3UNAvHYa+PnvntIwRPt1/vy4nA9Q==}
     dependencies:
       '@formatjs/ecma402-abstract': 2.0.0
       tslib: 2.7.0
-    dev: false
 
   /@formatjs/intl-localematcher@0.5.4:
     resolution: {integrity: sha512-zTwEpWOzZ2CiKcB93BLngUX59hQkuZjT2+SAQEscSm52peDW/getsawMcWF1rGRpMCX6D7nSJA3CzJ8gn13N/g==}
     dependencies:
       tslib: 2.7.0
-    dev: false
 
   /@humanwhocodes/config-array@0.11.14:
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -6458,7 +6456,6 @@ packages:
       '@formatjs/fast-memoize': 2.2.0
       '@formatjs/icu-messageformat-parser': 2.7.8
       tslib: 2.7.0
-    dev: false
 
   /ipaddr.js@1.9.1:
     resolution: {integrity: sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==}
@@ -7270,7 +7267,6 @@ packages:
       next: 14.2.3(@babel/core@7.25.2)(react-dom@18.3.1)(react@18.3.1)
       react: 18.3.1
       use-intl: 3.19.1(react@18.3.1)
-    dev: false
 
   /next@14.2.3(@babel/core@7.25.2)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-dowFkFTR8v79NPJO4QsBUtxv0g9BrS/phluVpMAt2ku7H+cbcBJlopXjkWlwxrk/xGqMemr7JkGPGemPrLLX7A==}
@@ -8775,6 +8771,19 @@ packages:
       internal-slot: 1.0.7
     dev: true
 
+  /storybook-i18n@3.1.1:
+    resolution: {integrity: sha512-k1/lS+Rx6l5mJEYAHQWEgXuwU5IyWk7kjcJtm2FDIn1UqZwbEraGlrp/fEZKK2e/7+SXEQdKeCaTz7+63WTQxw==}
+    dev: true
+
+  /storybook-next-intl@1.1.4(next-intl@3.19.1):
+    resolution: {integrity: sha512-7QoiYjxXMmCNMJQX5LIttRxkuIdRb+AL4Zk0DbRlz81kQD88RPwnj3PK3PlG0JJ/7/4VjuCi6j5O9gNVBGSfLA==}
+    peerDependencies:
+      next-intl: ^3
+    dependencies:
+      next-intl: 3.19.1(next@14.2.3)(react@18.3.1)
+      storybook-i18n: 3.1.1
+    dev: true
+
   /storybook@8.2.9:
     resolution: {integrity: sha512-S7Q/Yt4A+nu1O23rg39lQvBqL2Vg+PKXbserDWUR4LFJtfmoZ2xGO8oFIhJmvvhjUBvolw1q7QDeswPq2i0sGw==}
     hasBin: true
@@ -9510,7 +9519,6 @@ packages:
       '@formatjs/fast-memoize': 2.2.0
       intl-messageformat: 10.5.14
       react: 18.3.1
-    dev: false
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
