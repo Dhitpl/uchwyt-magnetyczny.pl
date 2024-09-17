@@ -2,7 +2,7 @@ import { Suspense } from 'react'
 
 import type { Color } from '~/types'
 
-import { getColor } from '~/utils'
+import { cn, getColor } from '~/utils'
 
 import { defaultColor } from './icon.const'
 import { Custom, Lucide } from './icon.types'
@@ -11,6 +11,7 @@ import { getIconComponent } from './icon.utils'
 export type IconProps<T extends string = string> = {
   size?: number
   color?: Color<T>
+  className?: HTMLElement['className']
 } & (Lucide | Custom)
 
 /**
@@ -19,6 +20,7 @@ export type IconProps<T extends string = string> = {
  * @template T - A string type for validating color
  * @param props - The props for the Icon component.
  * @param [props.size=24] - The size of the icon.
+ * @param [props.className] - Additional class names to apply to the component.
  * @param [props.color=defaultColor] - The color of the icon.
  * @param props.variant - The variant of the icon.
  * @param props.name - The name of the icon to render.
@@ -47,6 +49,7 @@ export type IconProps<T extends string = string> = {
 export function Icon<T extends string = string>({
   size = 24,
   color = defaultColor,
+  className,
   ...props
 }: IconProps<T>) {
   const hexColor = getColor(color)
@@ -55,7 +58,10 @@ export function Icon<T extends string = string>({
 
   return (
     <div
-      className={`w-[${size}px] h-[${size}px] flex items-center justify-center`}
+      className={cn(
+        `w-[${size}px] h-[${size}px] flex items-center justify-center`,
+        className,
+      )}
     >
       <Suspense>
         <IconComponent size={size} color={hexColor} />
