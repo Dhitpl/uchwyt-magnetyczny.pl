@@ -45,6 +45,10 @@ export type IconProps<T extends string = string> = {
  * @example
  * // Render a Lucide icon with custom size and token color
  * <Icon variant="lucide" name="home" size={32} color="slate-600" />
+ *
+ * @example
+ * // Render a Lucide icon with additional class names
+ * <Icon variant="lucide" name="home" className="bg-slate-900" />
  */
 export function Icon<T extends string = string>({
   size = 24,

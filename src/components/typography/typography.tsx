@@ -30,14 +30,14 @@ export type TypographyProps = {
 /**
  * Typography component to render text with different styles based on the variant.
  *
- * @param {Object} props - The properties object.
- * @param {ReactNode} [props.children] - The content to be rendered inside the typography component.
- * @param {'p' | 'span' | 'small' | 'div' | 'blockquote' | 'code' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'} [props.tag] - The HTML tag to be used for rendering the text.
- * @param {string} [props.variant] - The variant of the typography. Can be 'headline', 'display', 'label', or undefined.
- * @param {number} [props.level] - The level of the headline variant (e.g., 1 for h1, 2 for h2, etc.).
- * @param {string} [props.size] - The size of the display or label variant. Defaults to 'md'.
- * @param {string} [props.className] - Additional class names to apply to the component.
- * @returns {JSX.Element} The rendered typography component.
+ * @param props - The properties object.
+ * @param [props.children] - The content to be rendered inside the typography component.
+ * @param [props.tag] - The HTML tag to be used for rendering the text.
+ * @param [props.variant] - The variant of the typography. Can be 'headline', 'display', 'label', or undefined.
+ * @param [props.level] - The level of the headline variant (e.g., 1 for h1, 2 for h2, etc.).
+ * @param [props.size] - The size of the display or label variant. Defaults to 'md'.
+ * @param [props.className] - Additional class names to apply to the component.
+ * @returns The rendered typography component.
  *
  * @example
  * // Render a headline

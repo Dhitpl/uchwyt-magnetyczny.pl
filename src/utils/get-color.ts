@@ -5,8 +5,8 @@ import { colors } from '~/styles/colors'
 /**
  * Retrieves the color value from the color name and shade.
  *
- * @param {string} color - The color name and shade in the format "name-shade" or a hex color code.
- * @returns {string} The corresponding color value.
+ * @param color - The color name and shade in the format "name-shade" or a hex color code.
+ * @returns The corresponding color value.
  *
  * @example
  * // Get color value from name and shade
