@@ -30,7 +30,21 @@
   },
   "sections": {
     "navbar": {
-      "title": "Tytuł"
+      "title": "uchwyty magnetyczne",
+      "freedelivery": "darmowa dostawa od 100zł",
+      "shop": "sklep",
+      "tutorial": "poradnik",
+      "blog": "blog",
+      "cart": "koszyk",
+      "rules": "regulamin",
+      "faq": "faq",
+      "contact": "kontakt",
+      "logo": "uchwyty magnetyczne",
+      "categories": "kategorie",
+      "magnets": "magnesy",
+      "handle": "uchwyty",
+      "gloves": "rękawiczki",
+      "ropes": "liny"
     }
   }
 }

@@ -36,7 +36,7 @@ export type TypographyProps = {
  * @param [props.tag] - The HTML tag to be used for rendering the text.
  * @param [props.variant] - The variant of the typography. Can be 'headline', 'body', 'label', or 'button' or undefined.
  * @param [props.level] - The level of the headline variant (e.g., 1 for h1, 2 for h2, etc.).
- * @param [props.size] - The size of the display or label variant. Defaults to 'md'.
+ * @param [props.size] - The size of the label variant. Defaults to 'md'.
  * @param [props.className] - Additional class names to apply to the component.
  * @returns The rendered typography component.
  *
@@ -44,9 +44,6 @@ export type TypographyProps = {
  * // Render a headline
  * <Typography variant="headline" level={1}>This is a headline</Typography>
  *
- * @example
- * // Render a display text
- * <Typography variant="display" size="lg">This is a display text</Typography>
  *
  * @example
  * // Render a label

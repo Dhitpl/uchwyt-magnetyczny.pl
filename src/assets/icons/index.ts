@@ -1,9 +1,8 @@
-import Apple from './apple'
-import Facebook from './facebook'
-import Google from './google'
-
-export const icons = {
-  apple: Apple,
-  facebook: Facebook,
-  google: Google,
+export default {
+  apple: () => import('./apple'),
+  facebook: () => import('./facebook'),
+  google: () => import('./google'),
+  cart: () => import('./cart'),
+  gmail: () => import('./gmail'),
+  whatsapp: () => import('./whatsapp'),
 }

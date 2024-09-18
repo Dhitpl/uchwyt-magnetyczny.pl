@@ -23,6 +23,6 @@ export const typographyVariants = cva(
       },
     },
   },
-)
+})
 
 export const defaultTypographyVariant: TypographyVariants = 'body-md'
