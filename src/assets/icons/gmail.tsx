@@ -1,9 +1,8 @@
 type GmailProps = {
   size?: number
-  color: string
 }
 
-function Gmail({ size = 38, color }: GmailProps) {
+function Gmail({ size = 38 }: GmailProps) {
   return (
     <svg width={size} height={size} viewBox='0 0 38 38' fill='none'>
       <path
