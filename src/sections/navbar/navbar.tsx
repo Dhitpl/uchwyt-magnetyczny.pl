@@ -51,13 +51,13 @@ export function Navbar() {
             </div>
           </div>
         </Link>
-        <ul className='uppercase text-[#C2C2C2] flex-row gap-4 hidden lg:flex xl:gap-7 items-center'>
+        <ul className='uppercase text-[#c2c2c2] flex-row gap-4 hidden lg:flex xl:gap-7 items-center'>
           <li>
             <Link
               className={`${pathname === '/sklep' ? 'text-red-700' : ''}`}
               href='/sklep'
             >
-              <div className='font-bold text-[20px] font-quicksand lg:text-[22px] xl:text-[26px]'>
+              <div className='font-bold hover:opacity-70 text-[20px] font-quicksand lg:text-[22px] xl:text-[26px]'>
                 {t('sections.navbar.shop')}
               </div>
             </Link>
@@ -67,7 +67,7 @@ export function Navbar() {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>
-                    <div className='font-bold text-[20px] font-quicksand lg:text-[22px] xl:text-[26px]'>
+                    <div className='font-bold hover:opacity-70 text-[20px] font-quicksand lg:text-[22px] xl:text-[26px]'>
                       {t('sections.navbar.categories')}
                     </div>
                   </NavigationMenuTrigger>
@@ -124,7 +124,7 @@ export function Navbar() {
               className={`${pathname === '/tutorial' ? 'text-red-700' : ''}`}
               href='/tutorial'
             >
-              <div className='font-bold text-[20px] font-quicksand lg:text-[22px] xl:text-[26px]'>
+              <div className='font-bold text-[20px] hover:opacity-70 font-quicksand lg:text-[22px] xl:text-[26px]'>
                 {t('sections.navbar.tutorial')}
               </div>
             </Link>
@@ -134,7 +134,7 @@ export function Navbar() {
               className={`${pathname === '/blog' ? 'text-red-700' : ''}`}
               href='/blog'
             >
-              <div className='font-bold text-[20px] font-quicksand lg:text-[22px] xl:text-[26px]'>
+              <div className='font-bold text-[20px] hover:opacity-70 font-quicksand lg:text-[22px] xl:text-[26px]'>
                 {t('sections.navbar.blog')}
               </div>
             </Link>
@@ -144,7 +144,7 @@ export function Navbar() {
               className={`${pathname === '/kontakt' ? 'text-red-700' : ''}`}
               href='/kontakt'
             >
-              <div className='font-bold text-[20px] font-quicksand lg:text-[22px] xl:text-[26px]'>
+              <div className='font-bold text-[20px] hover:opacity-70 font-quicksand lg:text-[22px] xl:text-[26px]'>
                 {t('sections.navbar.contact')}
               </div>
             </Link>

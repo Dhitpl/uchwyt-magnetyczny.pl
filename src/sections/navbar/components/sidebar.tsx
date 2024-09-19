@@ -27,7 +27,7 @@ export function SideBar({ toggleMenu }: { toggleMenu: () => void }) {
             <Typography
               variant='headline'
               level={3}
-              className='text-[#C2C2C2] font-bold uppercase text-left text-[40px]'
+              className='text-[#C2C2C2]  font-bold uppercase text-left text-[40px]'
             >
               uchwyty
             </Typography>
@@ -44,7 +44,7 @@ export function SideBar({ toggleMenu }: { toggleMenu: () => void }) {
           aria-label='Close sidebar'
           onClick={toggleMenu}
           type='button'
-          className='absolute top-6 right-6'
+          className='absolute top-6 right-6  hover:opacity-70'
         >
           <Icon variant='lucide' name='x' size={50} color='#C32B2B' />
         </button>
@@ -61,7 +61,7 @@ export function SideBar({ toggleMenu }: { toggleMenu: () => void }) {
                   <Typography
                     variant='headline'
                     level={3}
-                    className='font-bold text-[32px] px-1 py-2 transition-colors  cursor-pointer'
+                    className='font-bold hover:opacity-70 text-[32px] px-1 py-2 transition-colors  cursor-pointer'
                   >
                     {t('sections.navbar.shop')}
                   </Typography>
@@ -76,7 +76,7 @@ export function SideBar({ toggleMenu }: { toggleMenu: () => void }) {
                         <Typography
                           variant='headline'
                           level={3}
-                          className='font-bold text-[32px]'
+                          className='font-bold hover:opacity-70 text-[32px]'
                         >
                           {t('sections.navbar.categories')}
                         </Typography>
@@ -86,6 +86,27 @@ export function SideBar({ toggleMenu }: { toggleMenu: () => void }) {
                           <div className='block p-3 space-y-1 leading-none no-underline transition-colors rounded-md outline-none cursor-pointer select-none hover:bg-accent/20 focus:bg-accent focus:text-accent-foreground'>
                             <Typography className='font-bold text-[28px] md:text-[28px]'>
                               {t('sections.navbar.magnets')}
+                            </Typography>
+                          </div>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <div className='block p-3 space-y-1 leading-none no-underline transition-colors rounded-md outline-none cursor-pointer select-none hover:bg-accent/20 focus:bg-accent focus:text-accent-foreground'>
+                            <Typography className='font-bold text-[28px] md:text-[28px]'>
+                              {t('sections.navbar.handle')}
+                            </Typography>
+                          </div>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <div className='block p-3 space-y-1 leading-none no-underline transition-colors rounded-md outline-none cursor-pointer select-none hover:bg-accent/20 focus:bg-accent focus:text-accent-foreground'>
+                            <Typography className='font-bold text-[28px] md:text-[28px]'>
+                              {t('sections.navbar.gloves')}
+                            </Typography>
+                          </div>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <div className='block p-3 space-y-1 leading-none no-underline transition-colors rounded-md outline-none cursor-pointer select-none hover:bg-accent/20 focus:bg-accent focus:text-accent-foreground'>
+                            <Typography className='font-bold text-[28px] md:text-[28px]'>
+                              {t('sections.navbar.ropes')}
                             </Typography>
                           </div>
                         </NavigationMenuLink>
@@ -100,7 +121,7 @@ export function SideBar({ toggleMenu }: { toggleMenu: () => void }) {
                   <Typography
                     variant='headline'
                     level={3}
-                    className='font-bold text-[32px] px-1 py-2 transition-colors cursor-pointer'
+                    className='font-bold hover:opacity-70 text-[32px] px-1 py-2 transition-colors cursor-pointer'
                   >
                     {t('sections.navbar.tutorial')}
                   </Typography>
@@ -112,7 +133,7 @@ export function SideBar({ toggleMenu }: { toggleMenu: () => void }) {
                   <Typography
                     variant='headline'
                     level={3}
-                    className='font-bold text-[32px] px-1 py-2 transition-colors cursor-pointer'
+                    className='font-bold hover:opacity-70 text-[32px] px-1 py-2 transition-colors cursor-pointer'
                   >
                     {t('sections.navbar.blog')}
                   </Typography>
@@ -124,7 +145,7 @@ export function SideBar({ toggleMenu }: { toggleMenu: () => void }) {
                   <Typography
                     variant='headline'
                     level={3}
-                    className='font-bold text-[32px] px-1 py-2 transition-colors cursor-pointer'
+                    className='font-bold hover:opacity-70 text-[32px] px-1 py-2 transition-colors cursor-pointer'
                   >
                     {t('sections.navbar.contact')}
                   </Typography>
@@ -138,7 +159,7 @@ export function SideBar({ toggleMenu }: { toggleMenu: () => void }) {
                   <Typography
                     variant='headline'
                     level={4}
-                    className='font-bold text-[24px] md:text-[24px] px-1 py-2 transition-colors cursor-pointer'
+                    className='font-bold hover:opacity-70 text-[24px] md:text-[24px] px-1 py-2 transition-colors cursor-pointer'
                   >
                     {t('sections.navbar.rules')}
                   </Typography>
@@ -150,7 +171,7 @@ export function SideBar({ toggleMenu }: { toggleMenu: () => void }) {
                   <Typography
                     variant='headline'
                     level={4}
-                    className='font-bold text-[24px] md:text-[24px] px-1 py-2 transition-colors cursor-pointer w-min'
+                    className='font-bold hover:opacity-70 text-[24px] md:text-[24px] px-1 py-2 transition-colors cursor-pointer w-min'
                   >
                     {t('sections.navbar.faq')}
                   </Typography>
@@ -161,7 +182,7 @@ export function SideBar({ toggleMenu }: { toggleMenu: () => void }) {
           <div className='flex flex-row justify-between'>
             <Icon variant='custom' name='facebook' color='#ffffff' size={40} />
             <Icon variant='custom' name='whatsapp' color='#67C15E' size={40} />
-            <div className='h-[40px] w-[40px] bg-neutral-50 rounded-full flex items-center justify-center'>
+            <div className='h-[40px] w-[40px] bg-neutral-0 rounded-full flex items-center justify-center'>
               <Icon variant='custom' name='gmail' size={40} />
             </div>
           </div>

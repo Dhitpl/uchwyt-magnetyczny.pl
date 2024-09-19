@@ -14,7 +14,32 @@ export const routing = defineRouting({
   localePrefix,
 
   // Routes mapping
-  pathnames,
+  pathnames: {
+    '/': {
+      pl: '/',
+      en: '/',
+    },
+    '/blog': {
+      pl: '/blog',
+      en: '/blog',
+    },
+    '/contact': {
+      pl: '/kontakt',
+      en: '/contact',
+    },
+    '/shop': {
+      pl: '/sklep',
+      en: '/shop',
+    },
+    '/tutorial': {
+      pl: '/poradnik',
+      en: '/tutorial',
+    },
+    '/cart': {
+      pl: '/koszyk',
+      en: '/cart',
+    },
+  },
 })
 
 // Lightweight wrappers around Next.js' navigation APIs
