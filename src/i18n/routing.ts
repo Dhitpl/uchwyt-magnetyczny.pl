@@ -25,6 +25,18 @@ export const routing = defineRouting({
       pl: '/kontakt',
       en: '/contact',
     },
+    '/shop': {
+      pl: '/sklep',
+      en: '/shop',
+    },
+    '/tutorial': {
+      pl: '/poradnik',
+      en: '/tutorial',
+    },
+    '/cart': {
+      pl: '/koszyk',
+      en: '/cart',
+    },
   },
 })
 

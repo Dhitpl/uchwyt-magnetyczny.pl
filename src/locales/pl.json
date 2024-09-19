@@ -18,6 +18,21 @@
         "meta": {
           "title": "Strona główna"
         }
+      },
+      "shop": {
+        "meta": {
+          "title": "sklep"
+        }
+      },
+      "tutorial": {
+        "meta": {
+          "title": "poradnik"
+        }
+      },
+      "cart": {
+        "meta": {
+          "title": "koszyk"
+        }
       }
     },
     "error": {

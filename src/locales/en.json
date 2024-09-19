@@ -18,6 +18,21 @@
         "meta": {
           "title": "Home"
         }
+      },
+      "shop": {
+        "meta": {
+          "title": "shop"
+        }
+      },
+      "tutorial": {
+        "meta": {
+          "title": "tutorial"
+        }
+      },
+      "cart": {
+        "meta": {
+          "title": "cart"
+        }
       }
     },
     "error": {
