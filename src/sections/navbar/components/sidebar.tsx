@@ -159,7 +159,6 @@ export function SideBar({ toggleMenu }: { toggleMenu: () => void }) {
             </ul>
           </div>
           <div className='flex flex-row justify-between'>
-            {}
             <Icon variant='custom' name='facebook' color='#ffffff' size={40} />
             <Icon variant='custom' name='whatsapp' color='#67C15E' size={40} />
             <div className='h-[40px] w-[40px] bg-neutral-50 rounded-full flex items-center justify-center'>
