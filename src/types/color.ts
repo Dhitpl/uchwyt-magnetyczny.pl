@@ -27,6 +27,21 @@ export type HexColor<T extends string> =
         : never
       : never
 
+export type ExtendedColorShade =
+  | 0
+  | 50
+  | 100
+  | 200
+  | 300
+  | 400
+  | 500
+  | 600
+  | 700
+  | 800
+  | 900
+  | 950
+  | 1000
+
 export type ColorShade =
   | 50
   | 100
@@ -40,11 +55,12 @@ export type ColorShade =
   | 900
   | 950
 
+export type ExtendedColorPalette = 'neutral'
+
 export type ColorPalette =
   | 'slate'
   | 'gray'
   | 'zinc'
-  | 'neutral'
   | 'stone'
   | 'red'
   | 'orange'
@@ -64,6 +80,8 @@ export type ColorPalette =
   | 'pink'
   | 'rose'
 
-export type TokenColor = `${ColorPalette}-${ColorShade}`
+export type TokenColor =
+  | `${ExtendedColorPalette}-${ExtendedColorShade}`
+  | `${ColorPalette}-${ColorShade}`
 
 export type Color<T extends string = string> = TokenColor | HexColor<T>
