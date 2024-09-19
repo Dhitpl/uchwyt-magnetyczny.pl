@@ -1,11 +1,22 @@
-import type { ColorPalette, ColorShade } from '../types/color'
+import type {
+  ColorPalette,
+  ColorShade,
+  ExtendedColorPalette,
+  ExtendedColorShade,
+} from '../types/color'
 
 export const colors: Record<
   ColorPalette,
   {
     [key in ColorShade]: string
   }
-> = {
+> &
+  Record<
+    ExtendedColorPalette,
+    {
+      [key in ExtendedColorShade]: string
+    }
+  > = {
   slate: {
     50: '#f8fafc',
     100: '#f1f5f9',
@@ -46,6 +57,7 @@ export const colors: Record<
     950: '#09090b',
   },
   neutral: {
+    0: '#ffffff',
     50: '#fafafa',
     100: '#f5f5f5',
     200: '#e5e5e5',
@@ -57,6 +69,7 @@ export const colors: Record<
     800: '#262626',
     900: '#171717',
     950: '#0a0a0a',
+    1000: '#000000',
   },
   stone: {
     50: '#fafaf9',
