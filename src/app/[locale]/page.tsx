@@ -6,6 +6,8 @@ import { Button } from '~/components/ui'
 import { CardBlogPost } from '~/sections'
 import type { PageProps } from '~/types'
 
+import landscape from '~/assets/images/zdjecie.webp'
+
 export async function generateMetadata({ params: { locale } }: PageProps) {
   const t = await getTranslations({
     locale,
@@ -21,7 +23,58 @@ const icon = { variant: 'lucide', name: 'home' } as const
 
 export default function HomePage() {
   return (
-    <div className='p-2'>
+    <div className='p-2 flex flex-col gap-2'>
+      <div className='flex flex-col lg:flex-row lg:flex-wrap lg:justify-between lg:px-44 lg:py-7'>
+        <CardBlogPost
+          slug='znalezisko-wylowione-magnesem'
+          image={{
+            source: landscape,
+            alt: 'landscape',
+          }}
+          category='Znaleziska'
+          title='Znalezisko Wyłowione Magnesem'
+          description='Podczas poszukiwań z użyciem uchwytu magnetycznego wyłowiliśmy stary, zardzewiały klucz, najprawdopodobniej z początku XX wieku.'
+          date={new Date(2024, 10, 7, 18, 0)}
+          tags={['#Znaleziska', '#Magnes', '#Łowienie']}
+        />
+        <CardBlogPost
+          slug='zabytkowy-pistolet-ukryty-w-glebinach'
+          image={{
+            source: landscape,
+            alt: 'landscape',
+          }}
+          category='Znaleziska'
+          title='Zabytkowy Pistolet Ukryty w Głębinach'
+          description='Podczas ostatnich poszukiwań z użyciem magnesu wyłowiliśmy zabytkowy pistolet, spoczywający w wodzie przez wiele lat.'
+          date={new Date(2024, 10, 7, 18, 0)}
+          tags={['#Znaleziska', '#Broń', '#Zabytek']}
+        />
+        <CardBlogPost
+          slug='zabytkowy-pistolet-ukryty-w-glebinach'
+          image={{
+            source: landscape,
+            alt: 'landscape',
+          }}
+          category='Znaleziska'
+          title='Zabytkowy Pistolet Ukryty w Głębinach'
+          description='Podczas ostatnich poszukiwań z użyciem magnesu wyłowiliśmy zabytkowy pistolet, spoczywający w wodzie przez wiele lat.'
+          date={new Date(2024, 10, 7, 18, 0)}
+          tags={['#Znaleziska', '#Broń', '#Zabytek']}
+        />
+        <CardBlogPost
+          slug='zabytkowy-pistolet-ukryty-w-glebinach'
+          image={{
+            source: landscape,
+            alt: 'landscape',
+          }}
+          category='Znaleziska'
+          title='Zabytkowy Pistolet Ukryty w Głębinach'
+          description='Podczas ostatnich poszukiwań z użyciem magnesu wyłowiliśmy zabytkowy pistolet, spoczywający w wodzie przez wiele lat.'
+          date={new Date(2024, 10, 7, 18, 0)}
+          tags={['#Znaleziska', '#Broń', '#Zabytek']}
+        />
+      </div>
+
       <div className='flex flex-col gap-2'>
         <Typography variant='headline' level={1}>
           The quick brown fox jumps over the lazy dog

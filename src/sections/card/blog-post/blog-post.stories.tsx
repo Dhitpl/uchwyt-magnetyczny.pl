@@ -19,7 +19,7 @@ const Template: StoryFn<CardBlogPostProps> = args => <CardBlogPost {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  target: 'my-first-post',
+  slug: 'my-first-post',
   category: 'Tech',
   title: 'Understanding TypeScript',
   date: 'September 12, 2024',
@@ -29,7 +29,7 @@ Default.args = {
 
 export const WithoutTags = Template.bind({})
 WithoutTags.args = {
-  target: 'my-second-post',
+  slug: 'my-second-post',
   category: 'Lifestyle',
   title: 'Living a Minimalist Life',
   date: 'August 25, 2024',
@@ -39,7 +39,7 @@ WithoutTags.args = {
 
 export const NoDescription = Template.bind({})
 NoDescription.args = {
-  target: 'my-third-post',
+  slug: 'my-third-post',
   category: 'Travel',
   title: 'Exploring the Alps',
   date: 'July 18, 2024',
