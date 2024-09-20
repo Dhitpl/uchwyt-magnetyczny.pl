@@ -19,7 +19,7 @@ export const getTypographyVariant = (
     return `headline-${props.level}`
   }
 
-  if (props.variant === 'display' || props.variant === 'label') {
+  if (props.variant === 'body' || props.variant === 'label') {
     return `${props.variant}-${props.size || 'md'}`
   }
 

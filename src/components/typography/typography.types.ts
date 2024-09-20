@@ -4,9 +4,13 @@ import type { typographyVariants } from './typography.const'
 
 export type Size = 'sm' | 'md' | 'lg'
 
-export type Display = {
-  variant: 'display'
+export type Body = {
+  variant: 'body'
   size?: Size
+}
+
+export type Button = {
+  variant: 'button'
 }
 
 export type Headline = {
@@ -24,7 +28,7 @@ export type DefaultVariant = {
   size?: undefined
 }
 
-// TODO: consider different name for this type, it's confusing because variant is 'headline' or 'display' or 'label'
+// TODO: consider different name for this type, it's confusing because variant is 'body' or 'button' or 'headline' or 'label'
 export type TypographyVariants = VariantProps<
   typeof typographyVariants
 >['variant']
