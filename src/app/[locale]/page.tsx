@@ -17,16 +17,6 @@ export async function generateMetadata({ params: { locale } }: PageProps) {
 export default function HomePage() {
   return (
     <div className='flex flex-col gap-2'>
-      <Typography variant='display' size='lg'>
-        The quick brown fox jumps over the lazy dog
-      </Typography>
-      <Typography variant='display' size='md'>
-        The quick brown fox jumps over the lazy dog
-      </Typography>
-      <Typography variant='display' size='sm'>
-        The quick brown fox jumps over the lazy dog
-      </Typography>
-
       <Typography variant='headline' level={1}>
         The quick brown fox jumps over the lazy dog
       </Typography>
@@ -46,6 +36,16 @@ export default function HomePage() {
         The quick brown fox jumps over the lazy dog
       </Typography>
 
+      <Typography variant='body' size='lg'>
+        The quick brown fox jumps over the lazy dog
+      </Typography>
+      <Typography variant='body' size='md'>
+        The quick brown fox jumps over the lazy dog
+      </Typography>
+      <Typography variant='body' size='sm'>
+        The quick brown fox jumps over the lazy dog
+      </Typography>
+
       <Typography variant='label' size='lg'>
         The quick brown fox jumps over the lazy dog
       </Typography>
@@ -53,6 +53,10 @@ export default function HomePage() {
         The quick brown fox jumps over the lazy dog
       </Typography>
       <Typography variant='label' size='sm'>
+        The quick brown fox jumps over the lazy dog
+      </Typography>
+
+      <Typography variant='button'>
         The quick brown fox jumps over the lazy dog
       </Typography>
     </div>
