@@ -10,7 +10,7 @@ export default {
     variant: {
       control: {
         type: 'select',
-        options: ['headline', 'display', 'label', undefined],
+        options: ['body', 'button', 'headline', 'label', undefined],
       },
     },
     level: {
@@ -25,7 +25,7 @@ export default {
         type: 'select',
         options: ['sm', 'md', 'lg'],
       },
-      if: { arg: 'variant', in: ['display', 'label'] },
+      if: { arg: 'variant', in: ['body', 'label'] },
     },
     tag: {
       control: {
@@ -53,18 +53,24 @@ const Template: StoryFn<TypographyProps> = ({ children, ...props }) => (
   <Typography {...props}>{children}</Typography>
 )
 
+export const Body = Template.bind({})
+Body.args = {
+  variant: 'body',
+  size: 'md',
+  children: 'This is a display text',
+}
+
+export const Button = Template.bind({})
+Button.args = {
+  variant: 'button',
+  children: 'This is a display text',
+}
+
 export const Headline = Template.bind({})
 Headline.args = {
   variant: 'headline',
   level: 1,
   children: 'This is a headline',
-}
-
-export const Display = Template.bind({})
-Display.args = {
-  variant: 'display',
-  size: 'lg',
-  children: 'This is a display text',
 }
 
 export const Label = Template.bind({})
