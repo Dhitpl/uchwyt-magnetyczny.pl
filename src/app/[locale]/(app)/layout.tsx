@@ -2,11 +2,10 @@
 
 import type { ReactNode } from 'react'
 
-import { Footer } from '~/sections'
-
 import { motion } from 'framer-motion'
 
 import { Breadcrumb } from '~/sections'
+import { Footer } from '~/sections'
 
 type AppLayoutProps = {
   children: ReactNode
@@ -36,7 +35,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
     >
       <Breadcrumb />
       {children}
-    <Footer/>
+      <Footer />
     </motion.div>
   )
 }
