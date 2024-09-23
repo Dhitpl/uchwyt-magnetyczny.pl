@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server'
 
 import { Typography } from '~/components'
+import { Button } from '~/components/ui'
 
 import type { PageProps } from '~/types'
 
@@ -59,6 +60,77 @@ export default function HomePage() {
       <Typography variant='button'>
         The quick brown fox jumps over the lazy dog
       </Typography>
+
+      <div className='flex gap-2 flex-wrap'>
+        <Button>Button</Button>
+        <Button variant='destructive'>Button</Button>
+        <Button variant='link'>Button</Button>
+
+        <Button prefixIcon={{ variant: 'lucide', name: 'home' }}>Button</Button>
+        <Button suffixIcon={{ variant: 'lucide', name: 'home' }}>Button</Button>
+        <Button
+          prefixIcon={{ variant: 'lucide', name: 'home' }}
+          suffixIcon={{ variant: 'lucide', name: 'home' }}
+        >
+          Button
+        </Button>
+
+        <Button isLoading>Button</Button>
+        <Button isLoading variant='destructive'>
+          Button
+        </Button>
+        <Button isLoading variant='link'>
+          Button
+        </Button>
+
+        <Button
+          isLoading
+          prefixIcon={{ variant: 'lucide', name: 'home' }}
+          disabled
+        >
+          Button
+        </Button>
+        <Button
+          isLoading
+          suffixIcon={{ variant: 'lucide', name: 'home' }}
+          disabled
+        >
+          Button
+        </Button>
+        <Button
+          isLoading
+          prefixIcon={{ variant: 'lucide', name: 'home' }}
+          suffixIcon={{ variant: 'lucide', name: 'home' }}
+          variant='link'
+          disabled
+        >
+          Button
+        </Button>
+
+        <Button
+          size='icon'
+          prefixIcon={{
+            name: 'home',
+            variant: 'lucide',
+          }}
+        />
+        <Button
+          size='icon'
+          prefixIcon={{
+            name: 'home',
+            variant: 'lucide',
+          }}
+          isLoading
+        />
+        <Button
+          size='icon'
+          prefixIcon={{
+            name: 'home',
+            variant: 'lucide',
+          }}
+          disabled
+        />
+      </div>
     </div>
   )
 }
