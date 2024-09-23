@@ -8,7 +8,7 @@ export async function generateMetadata({ params: { locale } }: PageProps) {
   })
 
   return {
-    title: `${t('page.app.blog.meta.title')} ${t('meta.suffix')}`,
+    title: `${t('page.app.cookies-policy.meta.title')} ${t('meta.suffix')}`,
   }
 }
 
