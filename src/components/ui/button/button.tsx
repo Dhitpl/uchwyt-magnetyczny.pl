@@ -15,13 +15,13 @@ import { cn } from '~/utils'
 import { getIconColor } from './button.utils'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center gap-2 relative whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
         default: 'bg-zinc-900 text-neutral-50 hover:bg-primary/90',
         destructive: 'bg-red-500 text-neutral-50 hover:bg-destructive/90',
-        link: 'text-red-500 underline-offset-0 underline transition-opacity hover:opacity-60',
+        link: 'text-red-500 transition-opacity hover:opacity-60',
       },
       size: {
         default: 'h-12 px-4 py-2 md:h-16 md:px-6 md:py-3',
@@ -84,9 +84,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {prefixIcon && isIconAndLoading === false && (
           <Icon
-            className={cn({
-              'mr-2': children !== undefined || suffixIcon !== undefined,
-            })}
             size={iconSize}
             color={iconColor}
             // eslint-disable-next-line react/jsx-props-no-spreading
@@ -96,9 +93,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {children}
         {suffixIcon && isIconAndLoading === false && (
           <Icon
-            className={cn({
-              'ml-2': children !== undefined || prefixIcon !== undefined,
-            })}
             size={iconSize}
             color={iconColor}
             // eslint-disable-next-line react/jsx-props-no-spreading
@@ -109,11 +103,17 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           <Icon
             variant='lucide'
             name='loader-circle'
-            className={cn('animate-spin', {
-              'ml-2': isIconAndLoading === false,
-            })}
+            className='animate-spin'
             size={iconSize}
             color={iconColor}
+          />
+        )}
+        {variant === 'link' && (
+          <div
+            className='absolute  h-[1px] bg-red-500 bottom-5 left-6'
+            style={{
+              width: 'calc(100% - 24px * 2)',
+            }}
           />
         )}
       </Comp>
