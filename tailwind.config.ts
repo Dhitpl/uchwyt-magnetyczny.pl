@@ -80,6 +80,9 @@ const config = {
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
+    // Next line is a workaround for importing breakpoints from project styles to keep one source of truth
+    // eslint-disable-next-line global-require, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-member-access
+    screens: require('./src/styles/breakpoints').breakpoints,
   },
   // eslint-disable-next-line global-require
   plugins: [require('tailwindcss-animate')],
