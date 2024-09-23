@@ -44,46 +44,11 @@ Destructive.args = {
   size: 'default',
 }
 
-export const Outline = Template.bind({})
-Outline.args = {
-  children: 'Outline Button',
-  variant: 'outline',
-  size: 'default',
-}
-
-export const Secondary = Template.bind({})
-Secondary.args = {
-  children: 'Secondary Button',
-  variant: 'secondary',
-  size: 'default',
-}
-
-export const Ghost = Template.bind({})
-Ghost.args = {
-  children: 'Ghost Button',
-  variant: 'ghost',
-  size: 'default',
-}
-
 export const Link = Template.bind({})
 Link.args = {
   children: 'Link Button',
   variant: 'link',
   size: 'default',
-}
-
-export const SmallSize = Template.bind({})
-SmallSize.args = {
-  children: 'Small Button',
-  variant: 'default',
-  size: 'sm',
-}
-
-export const LargeSize = Template.bind({})
-LargeSize.args = {
-  children: 'Large Button',
-  variant: 'default',
-  size: 'lg',
 }
 
 export const IconButton = Template.bind({})
