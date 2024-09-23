@@ -13,5 +13,5 @@ export async function generateMetadata({ params: { locale } }: PageProps) {
 }
 
 export default function BlogPage() {
-  return <div>kontakt</div>
+  return <div>blog</div>
 }
