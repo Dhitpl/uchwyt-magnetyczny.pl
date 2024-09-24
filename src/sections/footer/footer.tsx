@@ -19,7 +19,7 @@ export function Footer() {
               name='message-circle-question'
               variant='lucide'
               size={20}
-              color='red-700'
+              color='red-500'
             />
             <Link href='/faq'>
               <Typography variant='label' size='sm'>
@@ -28,7 +28,7 @@ export function Footer() {
             </Link>
           </div>
           <div className='flex items-center gap-2'>
-            <Icon name='mail' variant='lucide' size={20} color='red-700' />
+            <Icon name='mail' variant='lucide' size={20} color='red-500' />
             <Link href='/contact'>
               <Typography variant='label' size='sm'>
                 {t('footer.first-col.links.second')}
@@ -36,7 +36,7 @@ export function Footer() {
             </Link>
           </div>
           <div className='flex items-center gap-2'>
-            <Icon name='file-text' variant='lucide' size={20} color='red-700' />
+            <Icon name='file-text' variant='lucide' size={20} color='red-500' />
             <Link href='/blog'>
               <Typography variant='label' size='sm'>
                 {t('footer.first-col.links.third')}
@@ -51,7 +51,7 @@ export function Footer() {
         </Typography>
         <div className='font-semibold space-y-2'>
           <div className='flex items-center gap-2'>
-            <Icon name='file-text' variant='lucide' size={20} color='red-700' />
+            <Icon name='file-text' variant='lucide' size={20} color='red-500' />
             <Link href='/statute'>
               <Typography variant='label' size='sm'>
                 {t('footer.second-col.links.first')}
@@ -63,7 +63,7 @@ export function Footer() {
               name='circle-alert'
               variant='lucide'
               size={20}
-              color='red-700'
+              color='red-500'
             />
             <Link href='/privacy-policy'>
               <Typography variant='label' size='sm'>
@@ -72,7 +72,7 @@ export function Footer() {
             </Link>
           </div>
           <div className='flex items-center gap-2'>
-            <Icon name='cookie' variant='lucide' size={20} color='red-700' />
+            <Icon name='cookie' variant='lucide' size={20} color='red-500' />
             <Link href='/cookies-policy'>
               <Typography variant='label' size='sm'>
                 {t('footer.second-col.links.third')}
