@@ -39,6 +39,14 @@ Destructive.args = {
   size: 'default',
 }
 
+// Ghost Button story
+export const Ghost = Template.bind({})
+Ghost.args = {
+  children: 'Ghost',
+  variant: 'ghost',
+  size: 'default',
+}
+
 // Link Button story
 export const Link = Template.bind({})
 Link.args = {
