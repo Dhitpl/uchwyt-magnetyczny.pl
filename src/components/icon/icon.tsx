@@ -1,15 +1,17 @@
-import { Suspense } from 'react'
+'use client'
 
 import type { Color } from '~/types'
+
+import { useBreakpoint } from '~/hooks'
 
 import { cn, getColor } from '~/utils'
 
 import { defaultColor } from './icon.const'
-import { Custom, Lucide } from './icon.types'
-import { getIconComponent } from './icon.utils'
+import { Custom, Lucide, Size } from './icon.types'
+import { getIconComponent, getSizeByBreakpoint } from './icon.utils'
 
 export type IconProps<T extends string = string> = {
-  size?: number
+  size?: Size
   color?: Color<T>
   className?: HTMLElement['className']
 } & (Lucide | Custom)
@@ -57,19 +59,24 @@ export function Icon<T extends string = string>({
   ...props
 }: IconProps<T>) {
   const hexColor = getColor(color)
+  const breakpoint = useBreakpoint()
 
   const IconComponent = getIconComponent(props)
 
+  const currentSize = getSizeByBreakpoint({
+    breakpoint,
+    size,
+  })
+
   return (
     <div
-      className={cn(
-        `w-[${size}px] h-[${size}px] flex items-center justify-center`,
-        className,
-      )}
+      className={cn(`flex items-center justify-center`, className)}
+      style={{
+        width: `${currentSize}px`,
+        height: `${currentSize}px`,
+      }}
     >
-      <Suspense>
-        <IconComponent size={size} color={hexColor} />
-      </Suspense>
+      <IconComponent size={currentSize} color={hexColor} />
     </div>
   )
 }

@@ -1,94 +1,89 @@
 /* eslint-disable react/jsx-props-no-spreading, react/function-component-definition  */
 import type { Meta, StoryFn } from '@storybook/react'
-import { LayoutDashboardIcon } from 'lucide-react'
 
-import { Button, type ButtonProps } from './button'
+import { Button, ButtonProps } from './button'
 
+// Define the metadata for the Button component
 export default {
-  title: 'components/ui/button',
+  title: 'Components/Button',
   component: Button,
   argTypes: {
     variant: {
-      control: 'select',
-      options: [
-        'default',
-        'destructive',
-        'outline',
-        'secondary',
-        'ghost',
-        'link',
-      ],
+      control: { type: 'select' },
+      options: ['default', 'destructive', 'link'],
     },
     size: {
-      control: 'select',
-      options: ['default', 'sm', 'lg', 'icon'],
+      control: { type: 'select' },
+      options: ['default', 'icon'],
     },
+    prefixIcon: { control: false },
+    suffixIcon: { control: false },
   },
 } as Meta
 
-const Template: StoryFn<ButtonProps> = ({ children, ...props }) => (
-  <Button {...props}>{children}</Button>
-)
+const Template: StoryFn<ButtonProps> = args => <Button {...args} />
 
+// Default Button story
 export const Default = Template.bind({})
 Default.args = {
-  children: 'Default Button',
+  children: 'Button',
   variant: 'default',
   size: 'default',
 }
 
+// Destructive Button story
 export const Destructive = Template.bind({})
 Destructive.args = {
-  children: 'Destructive Button',
+  children: 'Delete',
   variant: 'destructive',
   size: 'default',
 }
 
-export const Outline = Template.bind({})
-Outline.args = {
-  children: 'Outline Button',
-  variant: 'outline',
-  size: 'default',
-}
-
-export const Secondary = Template.bind({})
-Secondary.args = {
-  children: 'Secondary Button',
-  variant: 'secondary',
-  size: 'default',
-}
-
+// Ghost Button story
 export const Ghost = Template.bind({})
 Ghost.args = {
-  children: 'Ghost Button',
+  children: 'Ghost',
   variant: 'ghost',
   size: 'default',
 }
 
+// Link Button story
 export const Link = Template.bind({})
 Link.args = {
-  children: 'Link Button',
+  children: 'Link',
   variant: 'link',
   size: 'default',
 }
 
-export const SmallSize = Template.bind({})
-SmallSize.args = {
-  children: 'Small Button',
+// Button with prefix icon
+export const WithPrefixIcon = Template.bind({})
+WithPrefixIcon.args = {
+  children: 'Button',
   variant: 'default',
-  size: 'sm',
+  size: 'default',
+  prefixIcon: {
+    variant: 'lucide',
+    name: 'home',
+  },
 }
 
-export const LargeSize = Template.bind({})
-LargeSize.args = {
-  children: 'Large Button',
+// Button with suffix icon
+export const WithSuffixIcon = Template.bind({})
+WithSuffixIcon.args = {
+  children: 'Button',
   variant: 'default',
-  size: 'lg',
+  size: 'default',
+  suffixIcon: {
+    variant: 'lucide',
+    name: 'home',
+  },
 }
 
-export const IconButton = Template.bind({})
-IconButton.args = {
-  children: <LayoutDashboardIcon />,
+// Loading Button story
+export const Loading = Template.bind({})
+Loading.args = {
+  children: 'Loading',
   variant: 'default',
-  size: 'icon',
+  size: 'default',
+  isLoading: true,
 }

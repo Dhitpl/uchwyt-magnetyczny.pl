@@ -6,7 +6,8 @@
     "nextjs",
     "Parens",
     "tailwindcss",
-    "uchwyt"
+    "uchwyt",
+    "Uncapitalize"
   ],
   "files.associations": {
     "*.css": "tailwindcss"
