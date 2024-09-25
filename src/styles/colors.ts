@@ -3,7 +3,7 @@ import type {
   ColorShade,
   ExtendedColorPalette,
   ExtendedColorShade,
-} from '../types/color'
+} from '~/types/color'
 
 export const colors: Record<
   ColorPalette,

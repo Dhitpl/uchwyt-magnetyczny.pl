@@ -6,6 +6,8 @@ import { type VariantProps, cva } from 'class-variance-authority'
 import { Icon, type IconProps } from '~/components/icon'
 import { typographyVariants } from '~/components/typography/typography.const'
 
+import type { Color } from '~/types'
+
 import { cn } from '~/utils'
 
 import { getIconColor } from './button.utils'
@@ -64,7 +66,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       typographyVariants({ variant: 'button' }),
     )
 
-    const iconColor = getIconColor(buttonClassName)
+    const iconColor: Color = getIconColor(buttonClassName) || 'zinc-900'
 
     const isIconAndLoading = size === 'icon' && isLoading === true
 

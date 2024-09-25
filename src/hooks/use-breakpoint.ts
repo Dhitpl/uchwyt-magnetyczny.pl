@@ -62,7 +62,6 @@ export const useBreakpoint = () => {
       }
     }
 
-    // Debouncing resize event to improve performance
     const handleResize = () => {
       if (resizeTimeout) {
         clearTimeout(resizeTimeout)

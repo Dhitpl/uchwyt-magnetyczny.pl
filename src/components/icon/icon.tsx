@@ -49,6 +49,10 @@ export type IconProps<T extends string = string> = {
  * <Icon variant="lucide" name="home" size={32} color="slate-600" />
  *
  * @example
+ * // Render a Lucide icon with custom size for mobile and tablet
+ * <Icon variant="lucide" name="home" size={{ xs: 24, md: 32 }} />
+ *
+ * @example
  * // Render a Lucide icon with additional class names
  * <Icon variant="lucide" name="home" className="bg-slate-900" />
  */
@@ -58,7 +62,7 @@ export function Icon<T extends string = string>({
   className,
   ...props
 }: IconProps<T>) {
-  const hexColor = getColor(color)
+  const hexColor = getColor(color) as Color
   const breakpoint = useBreakpoint()
 
   const IconComponent = getIconComponent(props)

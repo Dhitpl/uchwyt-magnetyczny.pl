@@ -10,11 +10,15 @@ type DetectCaseStyleProps = {
  * @param {string} str - The string to detect the case style of.
  * @returns {'camelCase' | 'PascalCase' | 'snake_case' | 'kebab-case' | 'unknown'} - The detected case style.
  */
-export const detectCaseStyle = ({ text }: DetectCaseStyleProps): Style => {
-  if (text.includes('-')) return 'kebab-case'
-  if (text.includes('_')) return 'snake_case'
-  if (text[0] === text[0].toUpperCase()) return 'PascalCase'
-  return 'camelCase'
+export const detectCaseStyle = ({
+  text,
+}: DetectCaseStyleProps): Style | 'unknown' => {
+  if (/^[a-z][a-zA-Z]*$/.test(text)) return 'camelCase'
+  if (/^[A-Z][a-zA-Z]*$/.test(text)) return 'PascalCase'
+  if (/^[a-z]+(-[a-z]+)*$/.test(text)) return 'kebab-case'
+  if (/^[a-z]+(_[a-z]+)*$/.test(text)) return 'snake_case'
+
+  return 'unknown'
 }
 
 type ConvertCaseStyleProps = {
@@ -28,22 +32,26 @@ const transformText = (
   transformFn: (match: string) => string,
 ) => text.replace(regex, transformFn)
 
-const transformations: Record<Style, Record<Style, (t: string) => string>> = {
+const transformations = {
   camelCase: {
     camelCase: (t: string) => t,
     PascalCase: (t: string) => t[0].toUpperCase() + t.slice(1),
     'kebab-case': (t: string) =>
-      transformText(t, /[A-Z]/g, match => `-${match.toLowerCase()}`),
+      t[0].toLowerCase() +
+      transformText(t.slice(1), /[A-Z]/g, match => `-${match.toLowerCase()}`),
     snake_case: (t: string) =>
-      transformText(t, /[A-Z]/g, match => `_${match.toLowerCase()}`),
+      t[0].toLowerCase() +
+      transformText(t.slice(1), /[A-Z]/g, match => `_${match.toLowerCase()}`),
   },
   PascalCase: {
     camelCase: (t: string) => t[0].toLowerCase() + t.slice(1),
     PascalCase: (t: string) => t[0].toUpperCase() + t.slice(1),
     'kebab-case': (t: string) =>
-      transformText(t, /[A-Z]/g, match => `-${match.toLowerCase()}`),
+      t[0].toLowerCase() +
+      transformText(t.slice(1), /[A-Z]/g, match => `-${match.toLowerCase()}`),
     snake_case: (t: string) =>
-      transformText(t, /[A-Z]/g, match => `_${match.toLowerCase()}`),
+      t[0].toLowerCase() +
+      transformText(t.slice(1), /[A-Z]/g, match => `_${match.toLowerCase()}`),
   },
   'kebab-case': {
     camelCase: (t: string) =>
@@ -83,6 +91,8 @@ export const convertCaseStyle = ({
   style,
 }: ConvertCaseStyleProps): string => {
   const currentStyle = detectCaseStyle({ text })
+
+  if (currentStyle === 'unknown') return text
 
   return transformations[currentStyle][style](text)
 }
