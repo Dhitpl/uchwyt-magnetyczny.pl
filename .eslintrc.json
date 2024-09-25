@@ -140,6 +140,7 @@
     "react/require-default-props": "off",
     "react/prop-types": "off",
     "default-case": "off",
-    "no-void": "off"
+    "no-void": "off",
+    "no-console": ["warn", { "allow": ["warn", "error"] }]
   }
 }

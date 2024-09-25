@@ -1,5 +1,6 @@
 {
   "name": "uchwyt-magnetyczny.pl",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +10,8 @@
     "lint": "next lint",
     "prisma:init-client": "prisma generate",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "test": "vitest --typecheck"
   },
   "dependencies": {
     "@prisma/client": "5.19.1",
@@ -36,9 +38,12 @@
     "@storybook/nextjs": "^8.1.1",
     "@storybook/react": "^8.1.1",
     "@storybook/test": "^8.1.1",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.0.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^8",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^18.0.0",
@@ -47,10 +52,13 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-storybook": "^0.8.0",
+    "jsdom": "^25.0.1",
     "postcss": "^8",
     "prisma": "5.19.1",
     "storybook": "^8.1.1",
     "storybook-next-intl": "^1.1.4",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "vite-tsconfig-paths": "^5.0.1",
+    "vitest": "^2.1.1"
   }
 }
