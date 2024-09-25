@@ -1,12 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading, react/function-component-definition  */
 import type { Meta, StoryFn } from '@storybook/react'
-import dynamicLucideIcons from 'lucide-react/dynamicIconImports'
 
 import type { Color } from '~/types'
 
-import dynamicCustomIcons from '~/assets/icons'
-
 import { Icon, type IconProps } from './icon'
+import { customIcons, lucideIcons } from './icon.const'
 
 export default {
   title: 'Components/Icon',
@@ -21,7 +19,7 @@ export default {
     name: {
       control: {
         type: 'select',
-        options: Object.keys({ ...dynamicLucideIcons, ...dynamicCustomIcons }),
+        options: Object.keys({ ...lucideIcons, ...customIcons }),
       },
     },
     size: {
