@@ -15,6 +15,9 @@ export async function generateMetadata({ params: { locale } }: PageProps) {
   }
 }
 
+const buttonVariants = ['default', 'destructive', 'ghost', 'link'] as const
+const icon = { variant: 'lucide', name: 'home' } as const
+
 export default function HomePage() {
   return (
     <div className='p-2'>
@@ -62,80 +65,44 @@ export default function HomePage() {
           The quick brown fox jumps over the lazy dog
         </Typography>
 
-        <div className='flex gap-2 flex-wrap'>
-          <Button>Button</Button>
-          <Button variant='destructive'>Button</Button>
-          <Button variant='link'>Button</Button>
+        {buttonVariants.map(variant => (
+          <div className='flex gap-2 flex-wrap' key={variant}>
+            <Button variant={variant}>Button</Button>
 
-          <Button prefixIcon={{ variant: 'lucide', name: 'home' }}>
-            Button
-          </Button>
-          <Button suffixIcon={{ variant: 'lucide', name: 'home' }}>
-            Button
-          </Button>
-          <Button
-            prefixIcon={{ variant: 'lucide', name: 'home' }}
-            suffixIcon={{ variant: 'lucide', name: 'home' }}
-          >
-            Button
-          </Button>
+            <Button variant={variant} disabled>
+              Button
+            </Button>
 
-          <Button isLoading>Button</Button>
-          <Button isLoading variant='destructive'>
-            Button
-          </Button>
-          <Button isLoading variant='link'>
-            Button
-          </Button>
+            <Button variant={variant} isLoading>
+              Button
+            </Button>
 
-          <Button
-            isLoading
-            prefixIcon={{ variant: 'lucide', name: 'home' }}
-            disabled
-          >
-            Button
-          </Button>
-          <Button
-            isLoading
-            suffixIcon={{ variant: 'lucide', name: 'home' }}
-            disabled
-          >
-            Button
-          </Button>
-          <Button
-            isLoading
-            prefixIcon={{ variant: 'lucide', name: 'home' }}
-            suffixIcon={{ variant: 'lucide', name: 'home' }}
-            variant='link'
-            disabled
-          >
-            Button
-          </Button>
+            <Button variant={variant} prefixIcon={icon}>
+              Button
+            </Button>
 
-          <Button
-            size='icon'
-            prefixIcon={{
-              name: 'home',
-              variant: 'lucide',
-            }}
-          />
-          <Button
-            size='icon'
-            prefixIcon={{
-              name: 'home',
-              variant: 'lucide',
-            }}
-            isLoading
-          />
-          <Button
-            size='icon'
-            prefixIcon={{
-              name: 'home',
-              variant: 'lucide',
-            }}
-            disabled
-          />
-        </div>
+            <Button variant={variant} suffixIcon={icon}>
+              Button
+            </Button>
+
+            <Button variant={variant} prefixIcon={icon} isLoading>
+              Button
+            </Button>
+
+            <Button variant={variant} suffixIcon={icon} isLoading>
+              Button
+            </Button>
+
+            <Button
+              variant={variant}
+              prefixIcon={icon}
+              suffixIcon={icon}
+              isLoading
+            >
+              Button
+            </Button>
+          </div>
+        ))}
       </div>
     </div>
   )
