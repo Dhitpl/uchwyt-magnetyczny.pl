@@ -8,7 +8,7 @@ export function Footer() {
   const t = useTranslations()
 
   return (
-    <div className='bg-[#272727] text-neutral-0 flex flex-row gap-14 items-center justify-center py-7 lg:gap-72'>
+    <div className='bg-gray-800 text-neutral-0 flex flex-row gap-14 items-center justify-center py-7 lg:gap-72'>
       <div className='uppercase flex flex-col gap-2'>
         <Typography variant='headline' level={5} className='font-semibold'>
           {t('footer.first-col.heading')}
