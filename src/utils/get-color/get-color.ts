@@ -3,10 +3,10 @@ import type { Color } from '~/types'
 import { colors } from '~/styles'
 
 /**
- * Retrieves the color value from the color name and shade.
+ * Retrieves the color value from the color name and shade or a hex color code.
  *
  * @param color - The color name and shade in the format "name-shade" or a hex color code.
- * @returns The corresponding color value.
+ * @returns - The corresponding color value or `undefined` if the color is invalid.
  *
  * @example
  * // Get color value from name and shade
