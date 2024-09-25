@@ -13,7 +13,7 @@ const config = {
   theme: {
     // Next line is a workaround for importing colors from project styles to keep one source of truth
     // eslint-disable-next-line global-require, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-member-access
-    colors: require('./src/styles/colors').colors,
+    colors: require('./src/styles').colors,
     container: {
       center: true,
       padding: '2rem',
@@ -82,7 +82,7 @@ const config = {
     },
     // Next line is a workaround for importing breakpoints from project styles to keep one source of truth
     // eslint-disable-next-line global-require, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-member-access
-    screens: require('./src/styles/breakpoints').breakpoints,
+    screens: require('./src/styles').breakpoints,
   },
   // eslint-disable-next-line global-require
   plugins: [require('tailwindcss-animate')],
