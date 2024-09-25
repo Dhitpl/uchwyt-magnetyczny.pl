@@ -1,5 +1,3 @@
-'use client'
-
 import { type ButtonHTMLAttributes, forwardRef } from 'react'
 
 import { Slot } from '@radix-ui/react-slot'
@@ -7,8 +5,6 @@ import { type VariantProps, cva } from 'class-variance-authority'
 
 import { Icon, type IconProps } from '~/components/icon'
 import { typographyVariants } from '~/components/typography/typography.const'
-
-import { useBreakpoint } from '~/hooks'
 
 import { cn } from '~/utils'
 
@@ -24,8 +20,8 @@ const buttonVariants = cva(
         link: 'text-red-500 transition-opacity hover:opacity-60',
       },
       size: {
-        default: 'h-12 px-4 py-2 md:h-16 md:px-6 md:py-3',
-        icon: 'h-12 w-12 md:h-16 md:w-16',
+        default: 'h-12 px-4 py-2 lg:h-16 lg:px-6 lg:py-3',
+        icon: 'h-12 w-12 lg:h-16 lg:w-16',
       },
     },
     defaultVariants: {
@@ -62,15 +58,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const Comp = asChild ? Slot : 'button'
 
-    const isDesktop = useBreakpoint({ breakpoint: 'md' })
-
     const buttonClassName = cn(
       buttonVariants({ variant, size, className }),
       typographyVariants({ variant: 'button' }),
     )
 
     const iconColor = getIconColor(buttonClassName)
-    const iconSize = isDesktop ? 20 : 16
 
     const isIconAndLoading = size === 'icon' && isLoading === true
 
@@ -84,7 +77,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {prefixIcon && isIconAndLoading === false && (
           <Icon
-            size={iconSize}
+            size={{
+              xs: 16,
+              lg: 20,
+            }}
             color={iconColor}
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...prefixIcon}
@@ -93,7 +89,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {children}
         {suffixIcon && isIconAndLoading === false && (
           <Icon
-            size={iconSize}
+            size={{
+              xs: 16,
+              lg: 20,
+            }}
             color={iconColor}
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...suffixIcon}
@@ -104,17 +103,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             variant='lucide'
             name='loader-circle'
             className='animate-spin'
-            size={iconSize}
+            size={{
+              xs: 16,
+              lg: 20,
+            }}
             color={iconColor}
           />
         )}
         {variant === 'link' && (
-          <div
-            className='absolute  h-[1px] bg-red-500 bottom-5 left-6'
-            style={{
-              width: 'calc(100% - 24px * 2)',
-            }}
-          />
+          <div className='absolute h-[1px] bg-red-500 bottom-3 lg:bottom-5 left-4 lg:left-6 w-[calc(100%-16px*2)] lg:w-[calc(100%-24px*2)]' />
         )}
       </Comp>
     )
