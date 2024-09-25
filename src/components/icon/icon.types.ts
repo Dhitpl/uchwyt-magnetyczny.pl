@@ -1,13 +1,21 @@
-import type dynamicLucideIcons from 'lucide-react/dynamicIconImports'
+import type { ConvertCaseStyle } from '~/types'
 
-import type dynamicCustomIcons from '~/assets/icons'
+import type { Breakpoint } from '~/styles'
+
+import type { icons as customIcons } from '~/assets/icons'
+
+import { lucideIcons } from './icon.const'
 
 export type Lucide = {
   variant: 'lucide'
-  name: keyof typeof dynamicLucideIcons
+  name: ConvertCaseStyle<keyof typeof lucideIcons, 'kebab-case'>
 }
 
 export type Custom = {
   variant: 'custom'
-  name: keyof typeof dynamicCustomIcons
+  name: keyof typeof customIcons
 }
+
+type SizeValue = number
+
+export type Size = SizeValue | { [key in Breakpoint]?: SizeValue }
