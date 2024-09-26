@@ -148,7 +148,7 @@
         "navbar": {
           "title": "fishing magnets",
           "freedelivery": "free delivery from 25$",
-          "shop": "uchwyty magnetyczne",
+          "shop": "shop",
           "tutorial": "tutorial",
           "blog": "blog",
           "cart": "cart",
@@ -158,8 +158,15 @@
           "categories": "categories",
           "magnets": "magnets",
           "handle": "handles",
-          "gloves": "gloves",
-          "ropes": "ropes"
+          "accessories": "accessories",
+          "ropes": "ropes",
+          "opensidebar": "open sidebar",
+          "closesidebar": "close sidebar",
+          "handles": "handles",
+          "logo": {
+            "magnetic": "magnetyczne",
+            "handles": "uchwyty"
+          }
         },
         "breadcrumb": {
           "/": "Home",

@@ -2,7 +2,7 @@ type GmailProps = {
   size?: number
 }
 
-function Gmail({ size = 38 }: GmailProps) {
+export function Gmail({ size = 38 }: GmailProps) {
   return (
     <svg width={size} height={size} viewBox='0 0 38 38' fill='none'>
       <path
@@ -29,4 +29,4 @@ function Gmail({ size = 38 }: GmailProps) {
   )
 }
 
-export default Gmail
+
