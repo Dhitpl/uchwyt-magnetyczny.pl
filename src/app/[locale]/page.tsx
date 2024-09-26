@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server'
 import { Typography } from '~/components'
 import { Button } from '~/components/ui'
 
+import { CardProduct } from '~/sections'
 import type { PageProps } from '~/types'
 
 export async function generateMetadata({ params: { locale } }: PageProps) {
