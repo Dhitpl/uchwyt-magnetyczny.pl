@@ -54,12 +54,18 @@
       "rules": "regulamin",
       "faq": "faq",
       "contact": "kontakt",
-      "logo": "uchwyty magnetyczne",
       "categories": "kategorie",
       "magnets": "magnesy",
       "handle": "uchwyty",
-      "gloves": "rękawiczki",
-      "ropes": "liny"
+      "accessories": "akcesoria",
+      "ropes": "liny",
+      "opensidebar": "Otwórz menu nawigacji bocznej",
+      "closesidebar": "Zamknij nawigację boczną",
+      "handles": "uchwyty",
+      "logo": {
+        "handles": "uchwyty",
+        "magnetic": "magnetyczne"
+      }
     }
   }
 }

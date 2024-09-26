@@ -57,8 +57,15 @@
       "categories": "categories",
       "magnets": "magnets",
       "handle": "handles",
-      "gloves": "gloves",
-      "ropes": "ropes"
+      "accessories": "accessories",
+      "ropes": "ropes",
+      "opensidebar": "open sidebar",
+      "closesidebar": "close sidebar",
+      "handles": "handles",
+      "logo": {
+        "magnetic": "magnetyczne",
+        "handles": "uchwyty"
+      }
     }
   }
 }
