@@ -28,5 +28,3 @@ export function Gmail({ size = 38 }: GmailProps) {
     </svg>
   )
 }
-
-

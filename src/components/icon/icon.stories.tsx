@@ -47,9 +47,9 @@ LucideIcon.args = {
 export const CustomIcon = Template.bind({})
 CustomIcon.args = {
   variant: 'custom',
-  name: 'apple',
+  name: 'cart',
   size: 24,
-  color: '#ff00ff' as Color,
+  color: 'gray-300' as Color,
 }
 
 export const CustomSizeAndColor = Template.bind({})

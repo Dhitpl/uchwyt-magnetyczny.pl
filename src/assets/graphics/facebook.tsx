@@ -16,4 +16,3 @@ export function Facebook({ size = 38 }: FacebookProps) {
     </svg>
   )
 }
-
