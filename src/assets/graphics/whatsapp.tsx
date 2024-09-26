@@ -12,4 +12,3 @@ export function Whatsapp({ size = 38 }: WhatsappProps) {
     </svg>
   )
 }
-
