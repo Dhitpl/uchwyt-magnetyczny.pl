@@ -2,6 +2,7 @@ import { Quicksand as FontQuicksand } from 'next/font/google'
 
 import type { ReactNode } from 'react'
 
+import { Provider } from 'jotai'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 
@@ -41,9 +42,11 @@ export default async function RootLayout({
           fontQuicksand.variable,
         )}
       >
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        <Provider>
+          <NextIntlClientProvider messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </Provider>
       </body>
     </html>
   )
