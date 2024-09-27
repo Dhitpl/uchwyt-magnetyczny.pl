@@ -5,7 +5,7 @@ import { Button } from '~/components/ui'
 
 import { Link } from '~/i18n/routing'
 
-type HeroTypes = {
+export type HeroTypes = {
   image: {
     source: StaticImageData
     alt: string
@@ -19,6 +19,8 @@ export function Hero({ image, title, discription, btnText }: HeroTypes) {
   return (
     <div className='relative flex flex-col justify-center w-full py-10 xs:h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px] 3xl:h-[800px]'>
       <Image
+        placeholder='blur'
+        loading='lazy'
         className='object-cover brightness-50'
         fill
         src={image.source}
