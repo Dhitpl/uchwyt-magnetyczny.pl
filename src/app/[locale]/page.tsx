@@ -3,7 +3,10 @@ import { getTranslations } from 'next-intl/server'
 import { Typography } from '~/components'
 import { Button } from '~/components/ui'
 
+import { Hero } from '~/sections/hero'
 import type { PageProps } from '~/types'
+
+import handleBackground from '~/assets/graphics/uchwyt.png'
 
 export async function generateMetadata({ params: { locale } }: PageProps) {
   const t = await getTranslations({
@@ -20,7 +23,13 @@ const icon = { variant: 'lucide', name: 'home' } as const
 
 export default function HomePage() {
   return (
-    <div className='p-2'>
+    <div>
+      <Hero
+        image={{ source: handleBackground, alt: 'Image of hero' }}
+        title='Wielka letnia promocja!'
+        discription='Przygotowaliśmy dla Ciebie coś specjalnego! Skorzystaj z naszej wyjątkowej oferty i ciesz się niższymi cenami. Użyj kodu lato2024!'
+        btnText='Skorzystaj z promocji!'
+      />
       <div className='flex flex-col gap-2'>
         <Typography variant='headline' level={1}>
           The quick brown fox jumps over the lazy dog
