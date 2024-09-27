@@ -46,20 +46,20 @@ export const routing = defineRouting({
       en: '/rules',
     },
     '/magnets': {
-      pl: '/magnesy',
-      en: '/magnets',
+      pl: '/sklep/magnesy',
+      en: '/shop/magnets',
     },
     '/handles': {
-      pl: '/uchwyty',
-      en: '/handles',
+      pl: '/sklep/uchwyty',
+      en: '/shop/handles',
     },
     '/rope': {
-      pl: '/liny',
-      en: '/rope',
+      pl: '/sklep/liny',
+      en: '/shop/ropes',
     },
     '/accessories': {
-      pl: '/akcesoria',
-      en: '/accessories',
+      pl: '/sklep/akcesoria',
+      en: '/shop/accessories',
     },
   },
 })
