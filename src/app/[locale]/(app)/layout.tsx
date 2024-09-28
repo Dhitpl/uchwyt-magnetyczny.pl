@@ -4,7 +4,7 @@ import type { ReactNode } from 'react'
 
 import { motion } from 'framer-motion'
 
-import { Breadcrumb } from '~/sections'
+import { Breadcrumb, Footer } from '~/sections'
 
 type AppLayoutProps = {
   children: ReactNode
@@ -34,6 +34,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
     >
       <Breadcrumb />
       {children}
+      <Footer />
     </motion.div>
   )
 }
