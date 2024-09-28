@@ -18,6 +18,11 @@
         "meta": {
           "title": "Strona główna"
         }
+      },
+      "statute": {
+        "meta": {
+          "title": "regulamin"
+        }
       }
     },
     "error": {

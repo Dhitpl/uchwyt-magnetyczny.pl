@@ -18,6 +18,11 @@
         "meta": {
           "title": "Home"
         }
+      },
+      "statute": {
+        "meta": {
+          "title": "statute"
+        }
       }
     },
     "error": {
