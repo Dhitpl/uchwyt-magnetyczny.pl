@@ -1,9 +1,9 @@
-type AppleProps = {
+type StarProps = {
   size?: number
   color: string
 }
 
-function Apple({ size = 38, color }: AppleProps) {
+function Star({ size = 38, color }: StarProps) {
   return (
     <svg
       width={size}
@@ -27,4 +27,4 @@ function Apple({ size = 38, color }: AppleProps) {
   )
 }
 
-export default Apple
+export default Star

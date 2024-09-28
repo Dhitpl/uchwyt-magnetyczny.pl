@@ -27,5 +27,13 @@
         }
       }
     }
+  },
+  "product": {
+    "description": {
+      "power": "Power",
+      "diameter": "diameter",
+      "height": "height",
+      "material": "material"
+    }
   }
 }
