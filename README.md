@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Magnet Handlers
+
+## Project Description
+
+This project is an **Online Magnet Shop** specializing in magnets designed for water retrieval, commonly used for magnet fishing. Users can browse, search, and purchase high-strength magnets intended for underwater exploration and treasure hunting. The platform is built to offer a user-friendly experience with fast navigation and reliable performance.
+
+## Technologies Used
+
+- **React**: We use React for building the frontend, ensuring a fast, interactive, and dynamic user experience.
+- **PNPM**: PNPM is our package manager of choice for its speed and efficiency in managing dependencies, resulting in faster builds and easier management of shared dependencies.
+- **HTML/CSS**: For structuring and styling the user interface.
+- **JavaScript (ES6+)**: The primary programming language for business logic and interaction handling.
+- **API**: We integrate with a backend API for data handling and business logic.
 
 ## Getting Started
 
-First, run the development server:
+To get started with the project locally, follow these steps:
+
+### Prerequisites
+
+Ensure you have the following installed on your machine:
+
+- [Node.js](https://nodejs.org/)
+- [PNPM](https://pnpm.io/)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Dhitpl/uchwyt-magnetyczny.pl.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd uchwyt-magnetyczny.pl
+   ```
+3. Install the dependencies using PNPM:
+   ```bash
+   pnpm install
+   ```
+
+### Running the Project
+
+To run the project locally, use the following command:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the development server, and you can view the app by navigating to `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building the Project
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To build the project for production:
 
-## Learn More
+```bash
+pnpm build
+```
 
-To learn more about Next.js, take a look at the following resources:
+The build will be optimized for production and output to the `/build` directory.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributors
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Ingram Kalina**: Senior Developer, Full Stack
+- **Julian Lewicki**: Junior Developer
+- **Alan Ostrowski**: Junior Developer
+- **Jakub Winiarski**: Junior Developer
 
-## Deploy on Vercel
+## Links
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Live Production Version**: [Magnet Shop](https://uchwyt-magnetyczny.pl/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Feel free to contribute to this project by submitting pull requests or reporting issues in the Issues tab.
+
+---
+
+Thank you for visiting our project! If you have any questions, feel free to reach out.
