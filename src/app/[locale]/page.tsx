@@ -33,7 +33,7 @@ export default function HomePage() {
           }}
           category='Znaleziska'
           title='Znalezisko Wyłowione Magnesem'
-          description='Podczas poszukiwań z użyciem uchwytu magnetycznego wyłowiliśmy stary, zardzewiały klucz, najprawdopodobniej z początku XX wieku.'
+          description='Podczas poszukiwań z użyciem uchwytu magnetycznego wyłowiliśmy stary, zardzewiały klucz, najprawdopodobniej z początku XX wieku.Podczas poszukiwań z użyciem uchwytu magnetycznego wyłowiliśmy stary, zardzewiały klucz, najprawdopodobniej z początku XX wieku.'
           date={new Date(2024, 10, 7, 18, 0)}
           tags={['#Znaleziska', '#Magnes', '#Łowienie']}
         />

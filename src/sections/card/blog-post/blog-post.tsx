@@ -1,8 +1,10 @@
+'use client'
+
 import Image, { StaticImageData } from 'next/image'
 
 import { useLocale } from 'next-intl'
 
-import { Typography } from '~/components'
+import { TruncateText, Typography } from '~/components'
 import { Badge } from '~/components/ui'
 
 import { Link } from '~/i18n/routing'
@@ -20,27 +22,6 @@ export type CardBlogPostProps = {
   tags?: string[]
 }
 
-/**
- * Blog Post Card component to render card with different texts passed thru props, which redirect to proper blog post website.
- *
- * @param [props.target] - The target route for the blog post link, typically a slug or identifier.
- * @param [props.category] - The category of the blog post, displayed prominently.
- * @param [props.title] - The title of the blog post, rendered as a headline.
- * @param [props.date] - The publication date of the blog post, formatted as a label.
- * @param [props.description] - A brief description or excerpt from the blog post.
- * @param [props.tags=[]] - An optional array of tags associated with the blog post, displayed as badges.
- *
- * @example
- * // Render a CardBlogPost component
- * <CardBlogPost
- *   target="my-first-post"
- *   category="Tech"
- *   title="Understanding TypeScript"
- *   date="September 12, 2024"
- *   description="A deep dive into the TypeScript language and its benefits."
- *   tags={['TypeScript', 'JavaScript', 'Programming']}
- * />
- */
 export function CardBlogPost({
   slug,
   image,
@@ -69,21 +50,33 @@ export function CardBlogPost({
 
   return (
     <Link href={`/blog/${slug}`}>
-      <div className='flex flex-col w-full max-w-[330px] lg:max-w-[330px] h-96 2xl:h-[440px] gap-1 rounded-lg border border-[#CACACA]'>
-        <div className='relative overflow-hidden rounded-t-lg basis-1/2'>
+      <div className='flex flex-col w-full max-w-[330px] lg:max-w-[330px] h-96 lg:h-[400px] xl:h-[420px] 2xl:h-[430px] 3xl:h-[440px] rounded-lg border border-gray-300'>
+        <div className='relative overflow-hidden rounded-t-lg basis-2/5 shrink-0'>
           <Image src={image.source} fill alt={image.alt} />
         </div>
-        <div className='basis-1/2 flex flex-col gap-2.5 px-2.5 py-4'>
-          <div className='flex flex-col'>
-            <Typography className='font-semibold text-[#C32B2B]'>
+        <div className='overflow-hidden basis-3/5 flex flex-col gap-2.5 px-2.5 py-4'>
+          <div className='flex flex-col h-full overflow-hidden'>
+            <Typography
+              variant='headline'
+              level={6}
+              className='font-semibold text-red-500'
+            >
               {category}
             </Typography>
-            <Typography variant='headline' level={5} className='font-bold'>
+            <Typography
+              variant='headline'
+              level={5}
+              className='font-bold mb-1 2xl:mb-2'
+            >
               {title}
             </Typography>
-            <Typography className='font-medium'>{description}</Typography>
+            <TruncateText>
+              <Typography variant='headline' level={6}>
+                {description}
+              </Typography>
+            </TruncateText>
           </div>
-          <Typography variant='label' size='sm' className='mt-auto'>
+          <Typography variant='label' size='sm'>
             {`${formattedDate.split(' ')[0]} ${formattedTime}, ${formattedDate.split(' ').slice(1).join('')}`}
           </Typography>
           <div className='flex flex-wrap gap-2.5'>

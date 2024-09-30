@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { type ReactNode, forwardRef } from 'react'
 
 import { typographyVariants } from './typography.const'
 import type {
@@ -13,19 +13,23 @@ import { getDefaultTag, getTypographyVariant } from './typography.utils'
 export type TypographyProps = {
   children?: ReactNode
   className?: HTMLElement['className']
-  tag?:
-    | 'p'
-    | 'span'
-    | 'small'
-    | 'div'
-    | 'blockquote'
-    | 'code'
-    | 'h1'
-    | 'h2'
-    | 'h3'
-    | 'h4'
-    | 'h5'
-    | 'h6'
+  // TODO: Make this work v
+  // tag?:
+  //   | 'p'
+  //   | 'span'
+  //   | 'small'
+  //   | 'div'
+  //   | 'blockquote'
+  //   | 'code'
+  //   | 'h1'
+  //   | 'h2'
+  //   | 'h3'
+  //   | 'h4'
+  //   | 'h5'
+  //   | 'h6'
+
+  // Temporary
+  tag?: React.ElementType
 } & (Body | Button | Headline | Label | DefaultVariant)
 
 /**
@@ -57,19 +61,25 @@ export type TypographyProps = {
  * // Render a paragraph with additional class names
  * <Typography tag="p" className="text-red-500">This is a paragraph with red text</Typography>
  */
-export function Typography({ children, className, ...props }: TypographyProps) {
-  const Tag = props.tag || getDefaultTag(props)
+const Typography = forwardRef<HTMLElement, TypographyProps>(
+  ({ children, className, tag, ...props }, ref) => {
+    const Tag = tag || getDefaultTag(props)
+    const variant = getTypographyVariant(props)
 
-  const variant = getTypographyVariant(props)
+    return (
+      <Tag
+        ref={ref}
+        className={typographyVariants({
+          variant,
+          className,
+        })}
+      >
+        {children}
+      </Tag>
+    )
+  },
+)
 
-  return (
-    <Tag
-      className={typographyVariants({
-        variant,
-        className,
-      })}
-    >
-      {children}
-    </Tag>
-  )
-}
+Typography.displayName = 'Typography'
+
+export { Typography }

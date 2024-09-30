@@ -2,9 +2,8 @@ import type { TypographyProps } from './typography'
 import { defaultTypographyVariant } from './typography.const'
 import type { TypographyVariants } from './typography.types'
 
-export const getDefaultTag = (
-  props: TypographyProps,
-): keyof HTMLElementTagNameMap => {
+// TODO make old types work
+export const getDefaultTag = (props: TypographyProps): React.ElementType => {
   if (props.variant === 'headline') {
     return props.tag || `h${props.level}`
   }
