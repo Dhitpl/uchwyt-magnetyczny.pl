@@ -22,7 +22,7 @@ Default.args = {
   slug: 'my-first-post',
   category: 'Tech',
   title: 'Understanding TypeScript',
-  date: 'September 12, 2024',
+  date: new Date(2024, 10, 7, 18, 0),
   description: 'A deep dive into the TypeScript language and its benefits.',
   tags: ['TypeScript', 'JavaScript', 'Programming'],
 }
@@ -32,7 +32,7 @@ WithoutTags.args = {
   slug: 'my-second-post',
   category: 'Lifestyle',
   title: 'Living a Minimalist Life',
-  date: 'August 25, 2024',
+  date: new Date(2024, 10, 7, 18, 0),
   description: 'Exploring the benefits and challenges of minimalist living.',
   tags: [],
 }
@@ -42,7 +42,7 @@ NoDescription.args = {
   slug: 'my-third-post',
   category: 'Travel',
   title: 'Exploring the Alps',
-  date: 'July 18, 2024',
+  date: new Date(2024, 10, 7, 18, 0),
   description: '',
   tags: ['Travel', 'Alps', 'Adventure'],
 }
