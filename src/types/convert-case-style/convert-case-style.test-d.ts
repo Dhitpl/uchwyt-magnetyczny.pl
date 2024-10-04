@@ -1,5 +1,4 @@
 /* eslint-disable import/no-extraneous-dependencies */
-
 import { describe, expectTypeOf, it } from 'vitest'
 
 import { ConvertCaseStyle } from '~/types/convert-case-style'
