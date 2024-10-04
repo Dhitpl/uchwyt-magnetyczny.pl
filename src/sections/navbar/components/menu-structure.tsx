@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react'
+import type { Dispatch, SetStateAction } from 'react'
 
 import { useTranslations } from 'next-intl'
 
@@ -15,75 +15,17 @@ import { Link, usePathname } from '~/i18n/routing'
 
 import { cn } from '~/utils'
 
-type AdditionalItem = {
-  path: string
-  key: string
-}
+import { additionalMenuStructure, menuStructure } from './menu-structure.data'
 
-type LinkItem = {
-  path: string
-  key: string
-  type: 'link'
-}
-
-type SelectItem = {
-  key: string
-  type: 'select'
-  items: { name: string; path: string }[]
-}
-
-type MenuItem = LinkItem | SelectItem
-
-const menuStructure: MenuItem[] = [
-  {
-    path: '/shop',
-    key: 'shop',
-    type: 'link',
-  },
-  {
-    key: 'category',
-    type: 'select',
-    items: [
-      { name: 'magnets', path: '/magnets' },
-      { name: 'handles', path: '/handles' },
-      { name: 'ropes', path: '/ropes' },
-      { name: 'accessories', path: '/accessories' },
-    ],
-  },
-  {
-    path: '/tutorial',
-    key: 'tutorial',
-    type: 'link',
-  },
-  {
-    path: '/blog',
-    key: 'blog',
-    type: 'link',
-  },
-  {
-    path: '/contact',
-    key: 'contact',
-    type: 'link',
-  },
-]
-
-const additionalMenuStructure: AdditionalItem[] = [
-  {
-    path: '/rules',
-    key: 'rules',
-  },
-  {
-    path: '/faq',
-    key: 'faq',
-  },
-]
-
-type IsMenuOpenProps = {
+type MenuStructureProps = {
   isMenuOpen: boolean
   setIsMenuOpen: Dispatch<SetStateAction<boolean>>
 }
 
-export function MenuStructure({ isMenuOpen, setIsMenuOpen }: IsMenuOpenProps) {
+export function MenuStructure({
+  isMenuOpen,
+  setIsMenuOpen,
+}: MenuStructureProps) {
   const t = useTranslations()
   const pathname = usePathname()
 
@@ -155,7 +97,7 @@ export function MenuStructure({ isMenuOpen, setIsMenuOpen }: IsMenuOpenProps) {
         )
       })}
 
-      {additionalMenuStructure?.map(item => {
+      {additionalMenuStructure.map(item => {
         return (
           <li
             key={item.key}

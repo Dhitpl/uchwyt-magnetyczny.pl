@@ -11,7 +11,7 @@ import { cn } from '~/utils'
 
 import { Brand, Facebook, Gmail, Whatsapp } from '~/assets/graphics'
 
-import { MenuStructure } from './components/menustructure'
+import { MenuStructure } from './components'
 
 export function Navbar() {
   const t = useTranslations()
