@@ -18,6 +18,21 @@
         "meta": {
           "title": "Home"
         }
+      },
+      "shop": {
+        "meta": {
+          "title": "shop"
+        }
+      },
+      "tutorial": {
+        "meta": {
+          "title": "tutorial"
+        }
+      },
+      "cart": {
+        "meta": {
+          "title": "cart"
+        }
       }
     },
     "error": {
@@ -25,6 +40,31 @@
         "meta": {
           "title": "Page not found"
         }
+      }
+    }
+  },
+  "sections": {
+    "navbar": {
+      "title": "fishing magnets",
+      "freedelivery": "free delivery from 25$",
+      "shop": "shop",
+      "tutorial": "tutorial",
+      "blog": "blog",
+      "cart": "cart",
+      "contact": "contact",
+      "rules": "rules",
+      "faq": "faq",
+      "categories": "categories",
+      "magnets": "magnets",
+      "handle": "handles",
+      "accessories": "accessories",
+      "ropes": "ropes",
+      "opensidebar": "open sidebar",
+      "closesidebar": "close sidebar",
+      "handles": "handles",
+      "logo": {
+        "magnetic": "magnetyczne",
+        "handles": "uchwyty"
       }
     }
   }

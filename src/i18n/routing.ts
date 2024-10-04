@@ -25,6 +25,42 @@ export const routing = defineRouting({
       pl: '/kontakt',
       en: '/contact',
     },
+    '/shop': {
+      pl: '/sklep',
+      en: '/shop',
+    },
+    '/tutorial': {
+      pl: '/poradnik',
+      en: '/tutorial',
+    },
+    '/cart': {
+      pl: '/koszyk',
+      en: '/cart',
+    },
+    '/faq': {
+      pl: '/faq',
+      en: '/faq',
+    },
+    '/rules': {
+      pl: '/regulamin',
+      en: '/rules',
+    },
+    '/magnets': {
+      pl: '/sklep/magnesy',
+      en: '/shop/magnets',
+    },
+    '/handles': {
+      pl: '/sklep/uchwyty',
+      en: '/shop/handles',
+    },
+    '/rope': {
+      pl: '/sklep/liny',
+      en: '/shop/ropes',
+    },
+    '/accessories': {
+      pl: '/sklep/akcesoria',
+      en: '/shop/accessories',
+    },
   },
 })
 

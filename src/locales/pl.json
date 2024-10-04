@@ -18,6 +18,21 @@
         "meta": {
           "title": "Strona główna"
         }
+      },
+      "shop": {
+        "meta": {
+          "title": "sklep"
+        }
+      },
+      "tutorial": {
+        "meta": {
+          "title": "poradnik"
+        }
+      },
+      "cart": {
+        "meta": {
+          "title": "koszyk"
+        }
       }
     },
     "error": {
@@ -25,6 +40,31 @@
         "meta": {
           "title": "Nie znaleziono strony"
         }
+      }
+    }
+  },
+  "sections": {
+    "navbar": {
+      "title": "uchwyty magnetyczne",
+      "freedelivery": "darmowa dostawa od 100zł",
+      "shop": "sklep",
+      "tutorial": "poradnik",
+      "blog": "blog",
+      "cart": "koszyk",
+      "rules": "regulamin",
+      "faq": "faq",
+      "contact": "kontakt",
+      "categories": "kategorie",
+      "magnets": "magnesy",
+      "handle": "uchwyty",
+      "accessories": "akcesoria",
+      "ropes": "liny",
+      "opensidebar": "Otwórz menu nawigacji bocznej",
+      "closesidebar": "Zamknij nawigację boczną",
+      "handles": "uchwyty",
+      "logo": {
+        "handles": "uchwyty",
+        "magnetic": "magnetyczne"
       }
     }
   }
