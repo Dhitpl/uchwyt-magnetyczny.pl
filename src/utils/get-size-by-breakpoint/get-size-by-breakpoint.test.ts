@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { Breakpoint } from '~/styles'
 
-import { getSizeByBreakpoint } from './icon.utils'
+import { getSizeByBreakpoint } from './get-size-by-breakpoint'
 
 describe('getSizeByBreakpoint', () => {
   it('should return the correct size for a given breakpoint', () => {
