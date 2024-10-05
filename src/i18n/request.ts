@@ -2,11 +2,10 @@ import { notFound } from 'next/navigation'
 
 import { getRequestConfig } from 'next-intl/server'
 
-import { routing } from './routing'
+import { locales } from './const'
 
 export default getRequestConfig(async ({ locale }) => {
-  // Validate that the incoming `locale` parameter is valid
-  if (!(routing.locales as unknown as string[]).includes(locale)) notFound()
+  if (!locales.includes(locale)) notFound()
 
   return {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
