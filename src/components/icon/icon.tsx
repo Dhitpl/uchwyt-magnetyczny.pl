@@ -12,7 +12,7 @@ import { getIconComponent, getSizeByBreakpoint } from './icon.utils'
 
 export type IconProps<T extends string = string> = {
   size?: Size
-  color?: Color<T>
+  color?: Color<T> | 'currentColor'
   className?: HTMLElement['className']
 } & (Lucide | Custom)
 
@@ -23,7 +23,7 @@ export type IconProps<T extends string = string> = {
  * @param props - The props for the Icon component.
  * @param [props.size=24] - The size of the icon.
  * @param [props.className] - Additional class names to apply to the component.
- * @param [props.color=defaultColor] - The color of the icon.
+ * @param [props.color=defaultColor] - The color of the icon. Can be a token color (e.g., "slate-600"), a hex color (e.g., "#ff00ff"), or "currentColor".
  * @param props.variant - The variant of the icon.
  * @param props.name - The name of the icon to render.
  * @returns The rendered icon component.
@@ -55,6 +55,10 @@ export type IconProps<T extends string = string> = {
  * @example
  * // Render a Lucide icon with additional class names
  * <Icon variant="lucide" name="home" className="bg-slate-900" />
+ *
+ * @example
+ * // Render a Lucide icon with currentColor
+ * <Icon variant="lucide" name="home" color="currentColor" />
  */
 export function Icon<T extends string = string>({
   size = 24,
@@ -62,10 +66,14 @@ export function Icon<T extends string = string>({
   className,
   ...props
 }: IconProps<T>) {
-  const hexColor = getColor(color) as Color
   const breakpoint = useBreakpoint()
 
   const IconComponent = getIconComponent(props)
+
+  const currentColor =
+    color === 'currentColor'
+      ? 'currentColor'
+      : (getColor(color as Color) as Color)
 
   const currentSize = getSizeByBreakpoint({
     breakpoint,
@@ -80,7 +88,7 @@ export function Icon<T extends string = string>({
         height: `${currentSize}px`,
       }}
     >
-      <IconComponent size={currentSize} color={hexColor} />
+      <IconComponent size={currentSize} color={currentColor} />
     </div>
   )
 }
