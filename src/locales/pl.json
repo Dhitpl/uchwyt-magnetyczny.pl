@@ -127,5 +127,28 @@
         }
       }
     }
+  },
+  "sections": {
+    "breadcrumb": {
+      "/": "Strona główna",
+      "/blog": "Blog",
+      "/contact": "Kontakt",
+      "/faq": "Często zadawane pytania",
+      "/order": "Zamówienie",
+      "/order/delivery-and-payment": "Dostawa i płatność",
+      "/order/shopping-cart": "Koszyk",
+      "/order/status": "Status",
+      "/order/summary": "Podsumowanie",
+      "/shop": "Sklep",
+      "/shop/accessories": "Akcesoria",
+      "/shop/handles": "Uchwyty",
+      "/shop/magnets": "Magnesy",
+      "/shop/ropes": "Liny",
+      "/terms-and-policies": "Warunki i zasady",
+      "/terms-and-policies/cookies": "Polityka cookies",
+      "/terms-and-policies/privacy": "Polityka prywatności",
+      "/terms-and-policies/statute": "Regulamin",
+      "/tutorial": "Poradnik"
+    }
   }
 }
