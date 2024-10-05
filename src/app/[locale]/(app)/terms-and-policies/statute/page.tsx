@@ -8,10 +8,10 @@ export async function generateMetadata({ params: { locale } }: PageProps) {
   })
 
   return {
-    title: `${t('page.app.blog.meta.title')} ${t('meta.suffix')}`,
+    title: `${t('page.app.termsAndConditions.statute.meta.title')} ${t('meta.suffix')}`,
   }
 }
 
-export default function BlogPage() {
-  return <div>artykuły</div>
+export default function TermsAndPoliciesStatutePage() {
+  return <div>regulamin</div>
 }
