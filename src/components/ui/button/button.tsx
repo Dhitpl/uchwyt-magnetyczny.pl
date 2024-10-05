@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { type ButtonHTMLAttributes, forwardRef } from 'react'
 
 import { Slot } from '@radix-ui/react-slot'
@@ -6,11 +7,9 @@ import { type VariantProps, cva } from 'class-variance-authority'
 import { Icon, type IconProps } from '~/components/icon'
 import { typographyVariants } from '~/components/typography/typography.const'
 
-import type { Color } from '~/types'
-
 import { cn } from '~/utils'
 
-import { getIconColor } from './button.utils'
+import { iconProps } from './button.const'
 
 const buttonVariants = cva(
   'inline-flex items-center justify-center gap-2 relative whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
@@ -66,8 +65,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       typographyVariants({ variant: 'button' }),
     )
 
-    const iconColor: Color = getIconColor(buttonClassName) || 'zinc-900'
-
     const isIconAndLoading = size === 'icon' && isLoading === true
 
     return (
@@ -75,42 +72,21 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         className={buttonClassName}
         ref={ref}
         disabled={isLoading || disabled}
-        // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
       >
         {prefixIcon && isIconAndLoading === false && (
-          <Icon
-            size={{
-              xs: 16,
-              lg: 20,
-            }}
-            color={iconColor}
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            {...prefixIcon}
-          />
+          <Icon {...iconProps} {...prefixIcon} />
         )}
         {children}
         {suffixIcon && isIconAndLoading === false && (
-          <Icon
-            size={{
-              xs: 16,
-              lg: 20,
-            }}
-            color={iconColor}
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            {...suffixIcon}
-          />
+          <Icon {...iconProps} {...suffixIcon} />
         )}
         {isLoading && (
           <Icon
             variant='lucide'
             name='loader-circle'
             className='animate-spin'
-            size={{
-              xs: 16,
-              lg: 20,
-            }}
-            color={iconColor}
+            {...iconProps}
           />
         )}
         {variant === 'link' && (
