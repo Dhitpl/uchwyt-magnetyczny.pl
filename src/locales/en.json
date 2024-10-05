@@ -6,7 +6,12 @@
     "app": {
       "blog": {
         "meta": {
-          "title": "posts"
+          "title": "articles"
+        },
+        "post": {
+          "meta": {
+            "title": "article"
+          }
         }
       },
       "contact": {
@@ -14,9 +19,104 @@
           "title": "contact"
         }
       },
+      "faq": {
+        "meta": {
+          "title": "frequently asked questions"
+        }
+      },
       "home": {
         "meta": {
           "title": "Home"
+        }
+      },
+      "order": {
+        "deliveryAndPayment": {
+          "meta": {
+            "title": "delivery and payment"
+          }
+        },
+        "meta": {
+          "title": "order"
+        },
+        "shoppingCart": {
+          "meta": {
+            "title": "shopping cart"
+          }
+        },
+        "status": {
+          "meta": {
+            "title": "status"
+          }
+        },
+        "summary": {
+          "meta": {
+            "title": "summary"
+          }
+        }
+      },
+      "shop": {
+        "accessories": {
+          "meta": {
+            "title": "accessories"
+          },
+          "product": {
+            "meta": {
+              "title": "accessory"
+            }
+          }
+        },
+        "handles": {
+          "meta": {
+            "title": "handles"
+          },
+          "product": {
+            "meta": {
+              "title": "handle"
+            }
+          }
+        },
+        "magnets": {
+          "meta": {
+            "title": "magnets"
+          },
+          "product": {
+            "meta": {
+              "title": "magnet"
+            }
+          }
+        },
+        "meta": {
+          "title": "shop"
+        },
+        "ropes": {
+          "meta": {
+            "title": "ropes"
+          },
+          "product": {
+            "meta": {
+              "title": "rope"
+            }
+          }
+        }
+      },
+      "termsAndConditions": {
+        "cookies": {
+          "meta": {
+            "title": "cookies policy"
+          }
+        },
+        "meta": {
+          "title": "terms and conditions"
+        },
+        "privacy": {
+          "meta": {
+            "title": "privacy policy"
+          }
+        },
+        "statute": {
+          "meta": {
+            "title": "statute"
+          }
         }
       }
     },
