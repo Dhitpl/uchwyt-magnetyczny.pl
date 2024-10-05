@@ -26,10 +26,14 @@ export const getSizeByBreakpoint = ({
 
   if (breakpointIndex === -1) return undefined
 
-  const closestSize = breakpointsOrder
-    .slice(0, breakpointIndex + 1)
-    .reverse()
-    .find(bp => size[bp] !== undefined)
+  // eslint-disable-next-line no-plusplus
+  for (let i = breakpointIndex; i >= 0; i--) {
+    const bp = breakpointsOrder[i]
 
-  return closestSize !== undefined ? size[closestSize] : undefined
+    if (size[bp] !== undefined) {
+      return size[bp]
+    }
+  }
+
+  return undefined
 }
