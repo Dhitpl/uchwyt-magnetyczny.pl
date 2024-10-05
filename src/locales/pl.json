@@ -6,7 +6,12 @@
     "app": {
       "blog": {
         "meta": {
-          "title": "posty"
+          "title": "artykuły"
+        },
+        "post": {
+          "meta": {
+            "title": "artykuł"
+          }
         }
       },
       "contact": {
@@ -14,9 +19,104 @@
           "title": "kontakt"
         }
       },
+      "faq": {
+        "meta": {
+          "title": "często zadawane pytania"
+        }
+      },
       "home": {
         "meta": {
           "title": "Strona główna"
+        }
+      },
+      "order": {
+        "deliveryAndPayment": {
+          "meta": {
+            "title": "dostwa i płatność"
+          }
+        },
+        "meta": {
+          "title": "zamówienie"
+        },
+        "shoppingCart": {
+          "meta": {
+            "title": "koszyk"
+          }
+        },
+        "status": {
+          "meta": {
+            "title": "status"
+          }
+        },
+        "summary": {
+          "meta": {
+            "title": "podsumowanie"
+          }
+        }
+      },
+      "shop": {
+        "accessories": {
+          "meta": {
+            "title": "akcesoria"
+          },
+          "product": {
+            "meta": {
+              "title": "akcesorium"
+            }
+          }
+        },
+        "handles": {
+          "meta": {
+            "title": "uchwyty"
+          },
+          "product": {
+            "meta": {
+              "title": "uchwyt"
+            }
+          }
+        },
+        "magnets": {
+          "meta": {
+            "title": "magnesy"
+          },
+          "product": {
+            "meta": {
+              "title": "magnes"
+            }
+          }
+        },
+        "meta": {
+          "title": "sklep"
+        },
+        "ropes": {
+          "meta": {
+            "title": "liny"
+          },
+          "product": {
+            "meta": {
+              "title": "lina"
+            }
+          }
+        }
+      },
+      "termsAndConditions": {
+        "cookies": {
+          "meta": {
+            "title": "polityka cookie"
+          }
+        },
+        "meta": {
+          "title": "warunki i zasady"
+        },
+        "privacy": {
+          "meta": {
+            "title": "polityka prywatności"
+          }
+        },
+        "statute": {
+          "meta": {
+            "title": "regulamin"
+          }
         }
       }
     },
@@ -26,6 +126,29 @@
           "title": "Nie znaleziono strony"
         }
       }
+    }
+  },
+  "sections": {
+    "breadcrumb": {
+      "/": "Strona główna",
+      "/blog": "Blog",
+      "/contact": "Kontakt",
+      "/faq": "Często zadawane pytania",
+      "/order": "Zamówienie",
+      "/order/delivery-and-payment": "Dostawa i płatność",
+      "/order/shopping-cart": "Koszyk",
+      "/order/status": "Status",
+      "/order/summary": "Podsumowanie",
+      "/shop": "Sklep",
+      "/shop/accessories": "Akcesoria",
+      "/shop/handles": "Uchwyty",
+      "/shop/magnets": "Magnesy",
+      "/shop/ropes": "Liny",
+      "/terms-and-policies": "Warunki i zasady",
+      "/terms-and-policies/cookies": "Polityka cookies",
+      "/terms-and-policies/privacy": "Polityka prywatności",
+      "/terms-and-policies/statute": "Regulamin",
+      "/tutorial": "Poradnik"
     }
   }
 }

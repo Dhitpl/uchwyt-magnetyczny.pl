@@ -1,34 +1,29 @@
-import { createSharedPathnamesNavigation } from 'next-intl/navigation'
+import { createLocalizedPathnamesNavigation } from 'next-intl/navigation'
 import { defineRouting } from 'next-intl/routing'
+
+import { defaultLocale, localePrefix, locales, pathnames } from './const'
 
 export const routing = defineRouting({
   // A list of all locales that are supported
-  locales: ['pl', 'en'],
+  locales,
 
   // Used when no locale matches
-  defaultLocale: 'pl',
+  defaultLocale,
 
   // Add the locale prefix only when it's not the default locale
-  localePrefix: 'as-needed',
+  localePrefix,
 
   // Routes mapping
-  pathnames: {
-    '/': {
-      pl: '/',
-      en: '/',
-    },
-    '/blog': {
-      pl: '/blog',
-      en: '/blog',
-    },
-    '/contact': {
-      pl: '/kontakt',
-      en: '/contact',
-    },
-  },
+  pathnames,
 })
 
 // Lightweight wrappers around Next.js' navigation APIs
 // that will consider the routing configuration
-export const { Link, redirect, usePathname, useRouter } =
-  createSharedPathnamesNavigation(routing)
+export const {
+  Link,
+  redirect,
+  usePathname,
+  useRouter,
+  getPathname,
+  permanentRedirect,
+} = createLocalizedPathnamesNavigation(routing)

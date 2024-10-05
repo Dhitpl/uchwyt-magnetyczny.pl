@@ -3,3 +3,10 @@ export type PageProps = {
     locale: string
   }
 }
+
+export type PagePropsWithSlug = {
+  params: {
+    locale: string
+    slug: string
+  }
+}
