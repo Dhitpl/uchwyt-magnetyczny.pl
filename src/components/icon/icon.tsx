@@ -4,11 +4,11 @@ import type { Color } from '~/types'
 
 import { useBreakpoint } from '~/hooks'
 
-import { cn, getColor } from '~/utils'
+import { cn, getColor, getSizeByBreakpoint } from '~/utils'
 
 import { defaultColor } from './icon.const'
 import { Custom, Lucide, Size } from './icon.types'
-import { getIconComponent, getSizeByBreakpoint } from './icon.utils'
+import { getIconComponent } from './icon.utils'
 
 export type IconProps<T extends string = string> = {
   size?: Size
