@@ -2,8 +2,6 @@ import { useSelectedLayoutSegments } from 'next/navigation'
 
 import { useTranslations } from 'next-intl'
 
-import type { Pathname } from '~/i18n/types'
-
 import { getLabel } from './breadcrumb.utils'
 import { BreadcrumbItem } from './components'
 
@@ -24,7 +22,7 @@ export function Breadcrumb() {
           const isLastSegment = index === selectedSegments.length - 1
           const nestedSegments = selectedSegments.slice(0, index + 1)
 
-          const pathname = `/${nestedSegments.join('/')}` as Pathname
+          const pathname = `/${nestedSegments.join('/')}`
 
           const label = getLabel({
             index,
