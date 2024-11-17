@@ -149,23 +149,23 @@
       "/terms-and-policies/privacy": "Privacy policy",
       "/terms-and-policies/statute": "Statute",
       "/tutorial": "Tutorial"
-    }
-  },
-  "footer": {
-    "first-col": {
-      "heading": "informations",
-      "links": {
-        "first": "faq",
-        "second": "contact",
-        "third": "blog"
-      }
     },
-    "second-col": {
-      "heading": "documents",
-      "links": {
-        "first": "statute",
-        "second": "privacy policy",
-        "third": "cookies policy"
+    "footer": {
+      "first-col": {
+        "heading": "informations",
+        "links": {
+          "first": "faq",
+          "second": "contact",
+          "third": "blog"
+        }
+      },
+      "second-col": {
+        "heading": "documents",
+        "links": {
+          "first": "statute",
+          "second": "privacy policy",
+          "third": "cookies policy"
+        }
       }
     }
   }

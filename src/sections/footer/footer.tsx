@@ -4,6 +4,8 @@ import { Icon, Typography } from '~/components'
 
 import { Link } from '~/i18n/routing'
 
+import { infoLinks, legalLinks } from './footer.data'
+
 export function Footer() {
   const t = useTranslations()
 
@@ -12,84 +14,45 @@ export function Footer() {
       <div className='flex-col flex md:flex-row gap-10 md:gap-28 lg:gap-44 xl:gap-80'>
         <div className='uppercase flex flex-col gap-2'>
           <Typography variant='headline' level={5} className='font-semibold'>
-            {t('footer.first-col.heading')}
+            {t('sections.footer.first-col.heading')}
           </Typography>
+
           <div className='font-semibold space-y-2'>
-            <div className='flex items-center gap-2 hover:opacity-70'>
-              <Icon
-                name='message-circle-question'
-                variant='lucide'
-                size={20}
-                color='red-500'
-              />
-              <Link href='/faq'>
+            {infoLinks.map(({ key, icon, href }) => (
+              <Link
+                key={key}
+                href={href}
+                className='flex items-center gap-2 hover:opacity-70'
+              >
+                {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+                <Icon size={20} color='red-500' {...icon} />
                 <Typography variant='label' size='sm'>
-                  {t('footer.first-col.links.first')}
+                  {t(`sections.footer.first-col.links.${key}`)}
                 </Typography>
               </Link>
-            </div>
-            <div className='flex items-center gap-2 hover:opacity-70'>
-              <Icon name='mail' variant='lucide' size={20} color='red-500' />
-              <Link href='/contact'>
-                <Typography variant='label' size='sm'>
-                  {t('footer.first-col.links.second')}
-                </Typography>
-              </Link>
-            </div>
-            <div className='flex items-center gap-2 hover:opacity-70'>
-              <Icon
-                name='file-text'
-                variant='lucide'
-                size={20}
-                color='red-500'
-              />
-              <Link href='/blog'>
-                <Typography variant='label' size='sm'>
-                  {t('footer.first-col.links.third')}
-                </Typography>
-              </Link>
-            </div>
+            ))}
           </div>
         </div>
+
         <div className='uppercase flex flex-col gap-2'>
           <Typography variant='headline' level={5} className='font-semibold'>
-            {t('footer.second-col.heading')}
+            {t('sections.footer.second-col.heading')}
           </Typography>
+
           <div className='font-semibold space-y-2'>
-            <div className='flex items-center gap-2 hover:opacity-70'>
-              <Icon
-                name='file-text'
-                variant='lucide'
-                size={20}
-                color='red-500'
-              />
-              <Link href='/statute'>
+            {legalLinks.map(({ key, icon, href }) => (
+              <Link
+                key={key}
+                href={href}
+                className='flex items-center gap-2 hover:opacity-70'
+              >
+                {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+                <Icon size={20} color='red-500' {...icon} />
                 <Typography variant='label' size='sm'>
-                  {t('footer.second-col.links.first')}
+                  {t(`sections.footer.second-col.links.${key}`)}
                 </Typography>
               </Link>
-            </div>
-            <div className='flex items-center gap-2 hover:opacity-70'>
-              <Icon
-                name='circle-alert'
-                variant='lucide'
-                size={20}
-                color='red-500'
-              />
-              <Link href='/privacy-policy'>
-                <Typography variant='label' size='sm'>
-                  {t('footer.second-col.links.second')}
-                </Typography>
-              </Link>
-            </div>
-            <div className='flex items-center gap-2 hover:opacity-70'>
-              <Icon name='cookie' variant='lucide' size={20} color='red-500' />
-              <Link href='/cookies-policy'>
-                <Typography variant='label' size='sm'>
-                  {t('footer.second-col.links.third')}
-                </Typography>
-              </Link>
-            </div>
+            ))}
           </div>
         </div>
       </div>
