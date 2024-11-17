@@ -1,28 +1,15 @@
 {
-  "root": true,
   "extends": [
     "next/core-web-vitals",
     "airbnb",
     "eslint:recommended",
-    "airbnb/hooks",
     "airbnb-typescript",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:prettier/recommended",
     "plugin:import/typescript",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
     "plugin:storybook/recommended"
   ],
-  "plugins": [
-    "@typescript-eslint",
-    "prettier",
-    "import",
-    "react",
-    "react-hooks",
-    "storybook"
-  ],
-  "parser": "@typescript-eslint/parser",
   "ignorePatterns": [
     "node_modules/*",
     ".next/*",
@@ -30,13 +17,120 @@
     "postcss.config.mjs",
     "tailwind.config.mjs"
   ],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json",
     "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": "latest",
+    "project": "./tsconfig.json",
     "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "prettier", "import", "react", "storybook"],
+  "root": true,
+  "rules": {
+    "default-case": "off",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        },
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "group": "builtin",
+            "pattern": "{next,next/**}",
+            "position": "before"
+          },
+          {
+            "group": "builtin",
+            "pattern": "react",
+            "position": "before"
+          },
+          {
+            "group": "internal",
+            "pattern": "{~/forms/**,~/forms}",
+            "position": "before"
+          },
+          {
+            "group": "internal",
+            "pattern": "{~/components/**,~/components}",
+            "position": "before"
+          },
+          {
+            "group": "internal",
+            "pattern": "{~/hooks/**,~/hooks}",
+            "position": "after"
+          },
+          {
+            "group": "internal",
+            "pattern": "{~/i18n,~/middleware,~/navigation,~/prisma}",
+            "position": "before"
+          },
+          {
+            "group": "internal",
+            "pattern": "{~/utils/**,~/utils}",
+            "position": "after"
+          },
+          {
+            "group": "internal",
+            "pattern": "{~/styles/**,~/styles}",
+            "position": "after"
+          },
+          {
+            "group": "internal",
+            "pattern": "{~/assets/**,~/assets}",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "warnOnUnassignedImports": false
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "no-console": [
+      "warn",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "no-void": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "arrowParens": "avoid",
+        "bracketSameLine": false,
+        "endOfLine": "lf",
+        "indentStyle": "space",
+        "jsxSingleQuote": true,
+        "printWidth": 80,
+        "semi": false,
+        "singleQuote": true,
+        "tabWidth": 2,
+        "trailingComma": "all",
+        "useTabs": false
+      }
+    ],
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
+    "sort-imports": [
+      "error",
+      {
+        "allowSeparatedGroups": true,
+        "ignoreDeclarationSort": true
+      }
+    ]
   },
   "settings": {
     "import/resolver": {
@@ -48,99 +142,5 @@
     "react": {
       "version": "detect"
     }
-  },
-  "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "semi": false,
-        "printWidth": 80,
-        "endOfLine": "lf",
-        "tabWidth": 2,
-        "indentStyle": "space",
-        "useTabs": false,
-        "arrowParens": "avoid",
-        "bracketSameLine": false,
-        "singleQuote": true,
-        "jsxSingleQuote": true,
-        "trailingComma": "all"
-      }
-    ],
-    "sort-imports": [
-      "error",
-      {
-        "ignoreDeclarationSort": true,
-        "allowSeparatedGroups": true
-      }
-    ],
-    "import/order": [
-      "error",
-      {
-        "newlines-between": "always",
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        },
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index"
-        ],
-        "pathGroups": [
-          {
-            "pattern": "{next,next/**}",
-            "group": "builtin",
-            "position": "before"
-          },
-          { "pattern": "react", "group": "builtin", "position": "before" },
-          {
-            "pattern": "{~/forms/**,~/forms}",
-            "group": "internal",
-            "position": "before"
-          },
-          {
-            "pattern": "{~/components/**,~/components}",
-            "group": "internal",
-            "position": "before"
-          },
-          {
-            "pattern": "{~/hooks/**,~/hooks}",
-            "group": "internal",
-            "position": "after"
-          },
-          {
-            "pattern": "{~/i18n,~/middleware,~/navigation,~/prisma}",
-            "group": "internal",
-            "position": "before"
-          },
-          {
-            "pattern": "{~/utils/**,~/utils}",
-            "group": "internal",
-            "position": "after"
-          },
-          {
-            "pattern": "{~/styles/**,~/styles}",
-            "group": "internal",
-            "position": "after"
-          },
-          {
-            "pattern": "{~/assets/**,~/assets}",
-            "group": "internal",
-            "position": "after"
-          }
-        ],
-        "pathGroupsExcludedImportTypes": ["react"],
-        "warnOnUnassignedImports": false
-      }
-    ],
-    "import/prefer-default-export": "off",
-    "react/require-default-props": "off",
-    "react/prop-types": "off",
-    "default-case": "off",
-    "no-void": "off",
-    "no-console": ["warn", { "allow": ["warn", "error"] }]
   }
 }

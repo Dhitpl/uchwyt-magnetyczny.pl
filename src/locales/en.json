@@ -149,6 +149,24 @@
       "/terms-and-policies/privacy": "Privacy policy",
       "/terms-and-policies/statute": "Statute",
       "/tutorial": "Tutorial"
+    },
+    "footer": {
+      "first-col": {
+        "heading": "informations",
+        "links": {
+          "faq": "faq",
+          "contact": "contact",
+          "blog": "blog"
+        }
+      },
+      "second-col": {
+        "heading": "documents",
+        "links": {
+          "statute": "statute",
+          "policy-privacy": "privacy policy",
+          "policy-cookies": "cookies policy"
+        }
+      }
     }
   }
 }
