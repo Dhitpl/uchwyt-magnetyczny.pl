@@ -4,62 +4,32 @@
 
 - **Live Site**: [uchwyt-magnetyczny.pl](https://uchwyt-magnetyczny.pl)
 
-## Project Description
+## Project description
 
 This project is an **Online Magnet Shop** specializing in magnets designed for water retrieval, commonly used for magnet fishing. Users can browse, search, and purchase high-strength magnets intended for underwater exploration and treasure hunting. The platform is built to offer a user-friendly experience with fast navigation and reliable performance.
 
-## Technologies Used
+## Technologies used
 
 <a aria-label="TypeScript" href="https://github.com/microsoft/TypeScript">
   <img alt="TypeScript repository" src="https://img.shields.io/badge/-TypeScript-black" />
 </a>
-<a aria-label="React" href="https://github.com/facebook/react/">
-  <img alt="React repository" src="https://img.shields.io/badge/-React-black" />
-</a>
-<a aria-label="Next.js" href="https://github.com/vercel/next.js">
-  <img alt="Next.js repository" src="https://img.shields.io/badge/-Next.js-black" />
-</a>
-<a aria-label="Prisma" href="https://github.com/prisma/prisma">
-  <img alt="Prisma repository" src="https://img.shields.io/badge/-Prisma-black" />
-</a>
-<a aria-label="Tailwind CSS" href="https://github.com/tailwindlabs/tailwindcss">
-  <img alt="Tailwind CSS repository" src="https://img.shields.io/badge/-Tailwind_CSS-black" />
-</a>
-<a aria-label="shadcn/ui" href="https://github.com/shadcn-ui/ui">
-  <img alt="shadcn/ui repository" src="https://img.shields.io/badge/-Shadcn_UI-black" />
-</a>
-<a aria-label="react-hook-form" href="https://github.com/react-hook-form/react-hook-form">
-  <img alt="react-hook-form repository" src="https://img.shields.io/badge/-React_Hook_Form-black" />
-</a>
-<a aria-label="Jotai" href="https://github.com/pmndrs/jotai">
-  <img alt="Jotai repository" src="https://img.shields.io/badge/-Jotai-black" />
-</a>
-<a aria-label="Motion" href="https://github.com/motiondivision/motion">
-  <img alt="Motion repository" src="https://img.shields.io/badge/-Motion-black" />
-</a>
-<a aria-label="next-intl" href="https://github.com/amannn/next-intl">
-  <img alt="next-intl repository" src="https://img.shields.io/badge/-Next_Intl-black" />
-</a>
-<a aria-label="lucide-react" href="https://github.com/lucide-icons/lucide">
-  <img alt="lucide-react repository" src="https://img.shields.io/badge/-Lucide_React-black" />
-</a>
-<a aria-label="Storybook" href="https://github.com/storybookjs/storybook">
-  <img alt="Storybook repository" src="https://img.shields.io/badge/-Storybook-black" />
-</a>
-<a aria-label="Vitest" href="https://github.com/vitest-dev/vitest">
-  <img alt="Vitest repository" src="https://img.shields.io/badge/-Vitest-black" />
-</a>
-<a aria-label="ESLint V8" href="https://github.com/eslint/eslint">
-  <img alt="ESLint repository" src="https://img.shields.io/badge/-ESLint-black" />
-</a>
-<a aria-label="Prettier" href="https://github.com/prettier/prettier">
-  <img alt="Prettier repository" src="https://img.shields.io/badge/-Prettier-black" />
-</a>
-<a aria-label="PNPM" href="https://pnpm.io/">
-  <img alt="PNPM repository" src="https://img.shields.io/badge/-PNPM-black" />
-</a>
+<a aria-label="React" href="https://github.com/facebook/react/"><img alt="React repository" src="https://img.shields.io/badge/-React-black" /></a>
+<a aria-label="Next.js" href="https://github.com/vercel/next.js"><img alt="Next.js repository" src="https://img.shields.io/badge/-Next.js-black" /></a>
+<a aria-label="Prisma" href="https://github.com/prisma/prisma"><img alt="Prisma repository" src="https://img.shields.io/badge/-Prisma-black" /></a>
+<a aria-label="Tailwind CSS" href="https://github.com/tailwindlabs/tailwindcss"><img alt="Tailwind CSS repository" src="https://img.shields.io/badge/-Tailwind_CSS-black" /></a>
+<a aria-label="shadcn/ui" href="https://github.com/shadcn-ui/ui"><img alt="shadcn/ui repository" src="https://img.shields.io/badge/-Shadcn_UI-black" /></a>
+<a aria-label="react-hook-form" href="https://github.com/react-hook-form/react-hook-form"><img alt="react-hook-form repository" src="https://img.shields.io/badge/-React_Hook_Form-black" /></a>
+<a aria-label="Jotai" href="https://github.com/pmndrs/jotai"><img alt="Jotai repository" src="https://img.shields.io/badge/-Jotai-black" /></a>
+<a aria-label="Motion" href="https://github.com/motiondivision/motion"><img alt="Motion repository" src="https://img.shields.io/badge/-Motion-black" /></a>
+<a aria-label="next-intl" href="https://github.com/amannn/next-intl"><img alt="next-intl repository" src="https://img.shields.io/badge/-Next_Intl-black" /></a>
+<a aria-label="lucide-react" href="https://github.com/lucide-icons/lucide"><img alt="lucide-react repository" src="https://img.shields.io/badge/-Lucide_React-black" /></a>
+<a aria-label="Storybook" href="https://github.com/storybookjs/storybook"><img alt="Storybook repository" src="https://img.shields.io/badge/-Storybook-black" /></a>
+<a aria-label="Vitest" href="https://github.com/vitest-dev/vitest"><img alt="Vitest repository" src="https://img.shields.io/badge/-Vitest-black" /></a>
+<a aria-label="ESLint V8" href="https://github.com/eslint/eslint"><img alt="ESLint repository" src="https://img.shields.io/badge/-ESLint-black" /></a>
+<a aria-label="Prettier" href="https://github.com/prettier/prettier"><img alt="Prettier repository" src="https://img.shields.io/badge/-Prettier-black" /></a>
+<a aria-label="PNPM" href="https://pnpm.io/"><img alt="PNPM repository" src="https://img.shields.io/badge/-PNPM-black" /></a>
 
-## Getting Started
+## Getting started
 
 To get started with the project locally, follow these steps:
 
@@ -85,7 +55,7 @@ Ensure you have the following installed on your machine:
    pnpm install
    ```
 
-### Running the Project
+### Running the project
 
 To run the project locally, use the following command:
 
@@ -95,7 +65,7 @@ pnpm run dev
 
 This will start the development server, and you can access the project at [http://localhost:3000](http://localhost:3000).
 
-### Building the Project
+### Building the project
 
 To build the project for production, use the following command:
 
