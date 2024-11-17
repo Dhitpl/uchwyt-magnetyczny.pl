@@ -22,7 +22,7 @@ export function Footer() {
               <Link
                 key={key}
                 href={href}
-                className='flex items-center gap-2 hover:opacity-70'
+                className='flex items-center gap-2 hover:opacity-70 transition'
               >
                 {/* eslint-disable-next-line react/jsx-props-no-spreading */}
                 <Icon size={20} color='red-500' {...icon} />
@@ -44,7 +44,7 @@ export function Footer() {
               <Link
                 key={key}
                 href={href}
-                className='flex items-center gap-2 hover:opacity-70'
+                className='flex items-center gap-2 hover:opacity-70 transition'
               >
                 {/* eslint-disable-next-line react/jsx-props-no-spreading */}
                 <Icon size={20} color='red-500' {...icon} />
