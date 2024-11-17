@@ -1,11 +1,10 @@
 import type { Pathnames } from 'next-intl/routing'
-import { LocalePrefix } from 'next-intl/routing'
 
 export const locales: string[] = ['pl', 'en'] as const
 
 export const defaultLocale: (typeof locales)[number] = 'pl'
 
-export const localePrefix: LocalePrefix = 'as-needed'
+export const localePrefix = 'as-needed'
 
 export const pathnames = {
   '/': {
@@ -16,9 +15,9 @@ export const pathnames = {
     en: '/blog',
     pl: '/blog',
   },
-  '/blog/:slug': {
-    en: '/blog/:slug',
-    pl: '/blog/:slug',
+  '/blog/[slug]': {
+    en: '/blog/[slug]',
+    pl: '/blog/[slug]',
   },
   '/contact': {
     en: '/contact',
@@ -56,33 +55,33 @@ export const pathnames = {
     en: '/shop/accessories',
     pl: '/sklep/akcesoria',
   },
-  '/shop/accessories/:slug': {
-    en: '/shop/accessories/:slug',
-    pl: '/sklep/akcesoria/:slug',
+  '/shop/accessories/[slug]': {
+    en: '/shop/accessories/[slug]',
+    pl: '/sklep/akcesoria/[slug]',
   },
   '/shop/handles': {
     en: '/shop/handles',
     pl: '/sklep/uchwyty',
   },
-  '/shop/handles/:slug': {
-    en: '/shop/handles/:slug',
-    pl: '/sklep/uchwyty/:slug',
+  '/shop/handles/[slug]': {
+    en: '/shop/handles/[slug]',
+    pl: '/sklep/uchwyty/[slug]',
   },
   '/shop/magnets': {
     en: '/shop/magnets',
     pl: '/sklep/magnesy',
   },
-  '/shop/magnets/:slug': {
-    en: '/shop/magnets/:slug',
-    pl: '/sklep/magnesy/:slug',
+  '/shop/magnets/[slug]': {
+    en: '/shop/magnets/[slug]',
+    pl: '/sklep/magnesy/[slug]',
   },
   '/shop/ropes': {
     en: '/shop/ropes',
     pl: '/sklep/liny',
   },
-  '/shop/ropes/:slug': {
-    en: '/shop/ropes/:slug',
-    pl: '/sklep/liny/:slug',
+  '/shop/ropes/[slug]': {
+    en: '/shop/ropes/[slug]',
+    pl: '/sklep/liny/[slug]',
   },
   '/terms-and-policies': {
     en: '/terms-and-policies',
@@ -104,4 +103,4 @@ export const pathnames = {
     en: '/tutorial',
     pl: '/poradnik',
   },
-} as const satisfies Pathnames<typeof locales>
+} as Pathnames<typeof locales>
