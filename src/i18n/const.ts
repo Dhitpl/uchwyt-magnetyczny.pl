@@ -1,5 +1,3 @@
-import type { Pathnames } from 'next-intl/routing'
-
 export const locales: string[] = ['pl', 'en'] as const
 
 export const defaultLocale: (typeof locales)[number] = 'pl'
@@ -103,4 +101,4 @@ export const pathnames = {
     en: '/tutorial',
     pl: '/poradnik',
   },
-} as Pathnames<typeof locales>
+} as const
