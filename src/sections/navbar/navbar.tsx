@@ -23,12 +23,8 @@ export function Navbar() {
   const shoppingCartTotal =
     shoppingCart === null ? 0 : getShoppingCartTotal(shoppingCart.items)
 
-  function toggleMenu() {
+  const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
-  }
-
-  const toggleMenuHandler = () => {
-    toggleMenu()
   }
 
   return (
@@ -78,7 +74,7 @@ export function Navbar() {
           <Button
             variant='ghost'
             aria-label={t('sections.navbar.sidebar.close')}
-            onClick={toggleMenuHandler}
+            onClick={() => handleToggleMenu()}
             type='button'
             className={cn(
               isMenuOpen
@@ -133,7 +129,7 @@ export function Navbar() {
               className={cn('2xl:hidden p-0 lg:p-0 h-8 lg:h-8', {
                 hidden: isMenuOpen,
               })}
-              onClick={toggleMenuHandler}
+              onClick={() => handleToggleMenu()}
               type='button'
               aria-label={t('sections.navbar.sidebar.open')}
             >
