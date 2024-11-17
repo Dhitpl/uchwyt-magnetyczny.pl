@@ -35,6 +35,6 @@ export const typographyVariants = cva('font-quicksand leading-[120%]', {
       button: 'text-[16px] md:text-[20px]',
     },
   },
-)
+})
 
 export const defaultTypographyVariant: TypographyVariants = 'body-md'
