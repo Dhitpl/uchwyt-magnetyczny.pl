@@ -34,7 +34,7 @@ export const legalLinks: FooterLink[] = [
       name: 'file-text',
       variant: 'lucide',
     },
-    href: '/statute',
+    href: '/terms-and-policies/statute',
   },
   {
     key: 'policy-privacy',
@@ -42,7 +42,7 @@ export const legalLinks: FooterLink[] = [
       name: 'circle-alert',
       variant: 'lucide',
     },
-    href: '/privacy-policy',
+    href: '/terms-and-policies/privacy',
   },
   {
     key: 'policy-cookies',
@@ -50,6 +50,6 @@ export const legalLinks: FooterLink[] = [
       name: 'cookie',
       variant: 'lucide',
     },
-    href: '/cookies-policy',
+    href: '/terms-and-policies/cookies',
   },
 ]
