@@ -154,17 +154,17 @@
       "first-col": {
         "heading": "informations",
         "links": {
-          "first": "faq",
-          "second": "contact",
-          "third": "blog"
+          "faq": "faq",
+          "contact": "contact",
+          "blog": "blog"
         }
       },
       "second-col": {
         "heading": "documents",
         "links": {
-          "first": "statute",
-          "second": "privacy policy",
-          "third": "cookies policy"
+          "statute": "statute",
+          "policy-privacy": "privacy policy",
+          "policy-cookies": "cookies policy"
         }
       }
     }
