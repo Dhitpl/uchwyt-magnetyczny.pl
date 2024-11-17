@@ -1,18 +1,20 @@
+import type { Href } from '~/i18n/types'
+
 type LinkItem = {
-  path: string
   key: string
+  href: Href
   type: 'link'
 }
 
 type SelectItem = {
+  items: { key: string; href: Href }[]
   key: string
   type: 'select'
-  items: { name: string; path: string }[]
 }
 
 export type MenuItem = LinkItem | SelectItem
 
 export type AdditionalItem = {
-  path: string
   key: string
+  href: Href
 }
