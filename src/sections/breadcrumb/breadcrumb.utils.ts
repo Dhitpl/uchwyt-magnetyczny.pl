@@ -22,7 +22,7 @@ export const getLabel = ({
     }
 
     if (segments[0] === 'shop') {
-      if (segments.length === 2 && index === 2) {
+      if (segments.length === 3 && index === 2) {
         if (segments[1] === 'accessories') {
           // TODO: handle parsing accessories into category name
           return segments[2]

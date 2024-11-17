@@ -1,6 +1,6 @@
 {
   "meta": {
-    "suffix": "| magnetic handler"
+    "suffix": "| magnetic holder"
   },
   "page": {
     "app": {
@@ -102,7 +102,7 @@
       "termsAndConditions": {
         "cookies": {
           "meta": {
-            "title": "cookies policy"
+            "title": "cookie policy"
           }
         },
         "meta": {
@@ -115,7 +115,7 @@
         },
         "statute": {
           "meta": {
-            "title": "statute"
+            "title": "regulations"
           }
         }
       }
@@ -133,10 +133,10 @@
       "/": "Home",
       "/blog": "Blog",
       "/contact": "Contact",
-      "/faq": "frequently asked questions",
+      "/faq": "Frequently Asked Questions",
       "/order": "Order",
-      "/order/delivery-and-payment": "Delivery and payment",
-      "/order/shopping-cart": "Shopping cart",
+      "/order/delivery-and-payment": "Delivery and Payment",
+      "/order/shopping-cart": "Shopping Cart",
       "/order/status": "Status",
       "/order/summary": "Summary",
       "/shop": "Shop",
@@ -144,29 +144,53 @@
       "/shop/handles": "Handles",
       "/shop/magnets": "Magnets",
       "/shop/ropes": "Ropes",
-      "/terms-and-policies": "Terms and conditions",
-      "/terms-and-policies/cookies": "Cookies policy",
-      "/terms-and-policies/privacy": "Privacy policy",
-      "/terms-and-policies/statute": "Statute",
+      "/terms-and-policies": "Terms and Conditions",
+      "/terms-and-policies/cookies": "Cookie Policy",
+      "/terms-and-policies/privacy": "Privacy Policy",
+      "/terms-and-policies/statute": "Regulations",
       "/tutorial": "Tutorial"
     },
     "footer": {
       "first-col": {
-        "heading": "informations",
+        "heading": "information",
         "links": {
-          "faq": "faq",
+          "blog": "blog",
           "contact": "contact",
-          "blog": "blog"
+          "faq": "faq"
         }
       },
       "second-col": {
         "heading": "documents",
         "links": {
-          "statute": "statute",
+          "policy-cookies": "cookie policy",
           "policy-privacy": "privacy policy",
-          "policy-cookies": "cookies policy"
+          "statute": "regulations"
         }
       }
+    },
+    "navbar": {
+      "accessories": "accessories",
+      "blog": "blog",
+      "categories": "categories",
+      "contact": "contact",
+      "faq": "faq",
+      "freedelivery": "free delivery from 100 PLN",
+      "handle": "handles",
+      "handles": "handles",
+      "logo": {
+        "handles": "handles",
+        "magnetic": "magnetic"
+      },
+      "magnets": "magnets",
+      "ropes": "ropes",
+      "shop": "shop",
+      "sidebar": {
+        "close": "close sidebar navigation",
+        "open": "open sidebar navigation"
+      },
+      "statute": "regulations",
+      "title": "magnetic handles",
+      "tutorial": "tutorial"
     }
   }
 }

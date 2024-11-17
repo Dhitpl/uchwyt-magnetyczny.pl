@@ -4,7 +4,7 @@ import type { ReactNode } from 'react'
 
 import { motion } from 'framer-motion'
 
-import { Breadcrumb, Footer } from '~/sections'
+import { Breadcrumb, Footer, Navbar } from '~/sections'
 
 type AppLayoutProps = {
   children: ReactNode
@@ -31,9 +31,14 @@ export default function AppLayout({ children }: AppLayoutProps) {
       animate='visible'
       variants={animation.variants}
       transition={animation.transition}
+      className='min-h-screen flex flex-col'
     >
+      <Navbar />
+
       <Breadcrumb />
-      {children}
+
+      <main className='flex-1'>{children}</main>
+
       <Footer />
     </motion.div>
   )

@@ -1,9 +1,5 @@
-import Apple from './apple'
-import Facebook from './facebook'
-import Google from './google'
+import Cart from './cart'
 
 export const icons = {
-  apple: Apple,
-  facebook: Facebook,
-  google: Google,
+  cart: Cart,
 }

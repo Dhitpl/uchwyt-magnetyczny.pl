@@ -2,6 +2,8 @@ import { useSelectedLayoutSegments } from 'next/navigation'
 
 import { useTranslations } from 'next-intl'
 
+import type { Href } from '~/i18n/types'
+
 import { getLabel } from './breadcrumb.utils'
 import { BreadcrumbItem } from './components'
 
@@ -10,10 +12,10 @@ export function Breadcrumb() {
   const selectedSegments = useSelectedLayoutSegments()
 
   return (
-    <nav>
+    <nav className='p-5'>
       <ol className='flex py-2.5 px-2.5 bg-gray-200 items-center text-gray-600 rounded-md gap-2.5'>
         <BreadcrumbItem
-          pathname='/'
+          href='/'
           label={t(`sections.breadcrumb./`)}
           isLastSegment={selectedSegments.length === 0}
         />
@@ -22,7 +24,8 @@ export function Breadcrumb() {
           const isLastSegment = index === selectedSegments.length - 1
           const nestedSegments = selectedSegments.slice(0, index + 1)
 
-          const pathname = `/${nestedSegments.join('/')}`
+          const href = `/${nestedSegments.join('/')}` as Href
+          const pathname = typeof href === 'string' ? href : href.pathname
 
           const label = getLabel({
             index,
@@ -34,7 +37,7 @@ export function Breadcrumb() {
           return (
             <BreadcrumbItem
               key={pathname}
-              pathname={pathname}
+              href={href}
               label={label}
               isLastSegment={isLastSegment}
             />
