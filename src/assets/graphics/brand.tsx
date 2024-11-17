@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl'
-import { DeepPartial } from 'react-hook-form'
+import type { DeepPartial } from 'react-hook-form'
 
-import { Color, Size } from '~/types'
+import type { Color, Size } from '~/types'
 
 import { useBreakpoint } from '~/hooks'
 
